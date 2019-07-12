@@ -8,26 +8,78 @@
 
 import UIKit
 
-class BikinIdeVC: UIViewController {
+class BikinIdeVC: UIViewController, UITextFieldDelegate, UIGestureRecognizerDelegate {
     
     // outlets
     @IBOutlet weak var ideTextField: TextFieldStyle!
+    @IBOutlet weak var navBar: UINavigationBar!
     
+    
+    // variables
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        ideTextField.delegate = self
+        
+        // tap gesture
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(viewTapped(recognizer:)))
+        tapGesture.delegate = self
+        view.addGestureRecognizer(tapGesture)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navBar.isTranslucent = false
+        navBar.shadowImage = UIImage()
+        
     }
-    */
+    
+    
+    
+    // MARK: - Navigation
+    
+    @IBAction func backToIdekuButton(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    @objc func viewTapped(recognizer: UITapGestureRecognizer) {
+        ideTextField.endEditing(true)
+    }
+    
+    @IBAction func cariInspirasiButton(_ sender: UIButton) {
+        
+        if  ideTextField.text != "" {
+            performSegue(withIdentifier: "goToBrainstorm", sender: self)
+        } else if ideTextField.text == "" {
+            
+            let alert = UIAlertController(title: "Kosong", message: "ide tidak bisa kosong", preferredStyle: .alert)
+            
+            let action = UIAlertAction(title: "Baik", style: .default, handler: nil)
+            
+            self.present(alert, animated: true, completion: nil)
+            alert.addAction(action)
+        }
+    }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let nextVC = segue.destination as! BrainstormVC
+        nextVC.judulBaru = ideTextField.text!
+    }
+    
+    
+    // MARK: - Keyboard stuff
+    
+    func hideKeyboard() {
+        ideTextField.resignFirstResponder()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        hideKeyboard()
+        return true
+    }
+    
 }
