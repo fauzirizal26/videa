@@ -160,7 +160,7 @@ class CameraVC: UIViewController, AVCaptureFileOutputRecordingDelegate {
             return
         }
         
-        performSegue(withIdentifier: "videoFinished", sender: outputFileURL)
+        performSegue(withIdentifier: "videoFinishedSegue", sender: outputFileURL)
     }
     
     
@@ -232,7 +232,7 @@ class CameraVC: UIViewController, AVCaptureFileOutputRecordingDelegate {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "videoFinished" {
+        if segue.identifier == "videoFinishedSegue" {
             let goToFinishedTakingVideo = segue.destination as! FinishedTakingVideoVC
             goToFinishedTakingVideo.judul = judul
             goToFinishedTakingVideo.onePhrase = onePhrase

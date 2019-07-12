@@ -120,12 +120,14 @@ class BrainstormVC: UIViewController {
     // accepted
     @IBAction func lanjutButton(_ sender: UIButton) {
         
-        self.progressBarAnimation()
-        self.animationOne()
-        let timer = Timer.scheduledTimer(timeInterval: 23, target: self, selector: #selector(animationTwo), userInfo: nil, repeats: false)
-        timer.fireDate.addTimeInterval(0)
-        let timerSegue = Timer.scheduledTimer(timeInterval: 48, target: self, selector: #selector(segueTime), userInfo: nil, repeats: false)
-        timerSegue.fireDate.addTimeInterval(0)
+//        self.progressBarAnimation()
+//        self.animationOne()
+//        let timer = Timer.scheduledTimer(timeInterval: 23, target: self, selector: #selector(animationTwo), userInfo: nil, repeats: false)
+//        timer.fireDate.addTimeInterval(0)
+//        let timerSegue = Timer.scheduledTimer(timeInterval: 48, target: self, selector: #selector(segueTime), userInfo: nil, repeats: false)
+//        timerSegue.fireDate.addTimeInterval(0)
+        
+        segueTime()
 
         
     }
