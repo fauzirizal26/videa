@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.99" systemVersion="18F132" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="DataInspirasi" representedClassName=".DataInspirasi" syncable="YES" codeGenerationType="class">
+        <attribute name="boomingFactor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="collabWith" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="onePhrase" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="settings" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uniqueFactor" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Konten" representedClassName=".Konten" syncable="YES" codeGenerationType="class">
         <attribute name="boomingFactor" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="collabWith" optional="YES" attributeType="String" syncable="YES"/>
@@ -13,6 +20,7 @@
         <attribute name="uniqueFactor" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
+        <element name="DataInspirasi" positionX="-45" positionY="72" width="128" height="120"/>
         <element name="Konten" positionX="-45" positionY="0" width="128" height="195"/>
     </elements>
 </model>

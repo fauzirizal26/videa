@@ -10,6 +10,7 @@ import UIKit
 import AVFoundation
 import AVKit
 
+
 class CameraVC: UIViewController, AVCaptureFileOutputRecordingDelegate {
     
     
@@ -31,7 +32,7 @@ class CameraVC: UIViewController, AVCaptureFileOutputRecordingDelegate {
     var settings = ""
     var unique = ""
     var booming = ""
-    
+    var savedVideoURL = ""
     
     
     
@@ -100,7 +101,7 @@ class CameraVC: UIViewController, AVCaptureFileOutputRecordingDelegate {
                 frontCamera = device
             }
         }
-        currentDevice = backCamera
+        currentDevice = frontCamera
         
     }
     
@@ -131,16 +132,23 @@ class CameraVC: UIViewController, AVCaptureFileOutputRecordingDelegate {
     // MARK: - Action methods
     
     @IBAction func capture(sender: UIButton) {
+//        let oneMinuteTimer = Timer.scheduledTimer(timeInterval: 60, target: self, selector: <#T##Selector#>, userInfo: nil, repeats: false)
         if !isRecording {
             isRecording = true
             
+            let oneMinuteTimer = Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(doneTakingVideo), userInfo: nil, repeats: false)
+            
             UIView.animate(withDuration: 0.5, delay: 0.0, options: [.repeat, .autoreverse, .allowUserInteraction], animations: { () -> Void in
                 self.recordButton.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
-            }, completion: nil)
+            }, completion: {(done) in
+                oneMinuteTimer.fire()
+            })
             
-            let outputPath = NSTemporaryDirectory() + "output.mov"
+            let outputPath = NSTemporaryDirectory() + "output\(judulLabel.text)\(onePhraseLabel.text).mov"
             let outputFileURL = URL(fileURLWithPath: outputPath)
             videoFileOutput?.startRecording(to: outputFileURL, recordingDelegate: self)
+            
+            
         } else {
             isRecording = false
             
@@ -152,14 +160,28 @@ class CameraVC: UIViewController, AVCaptureFileOutputRecordingDelegate {
         }
     }
     
+    // function to stop recording
+    @objc func doneTakingVideo() {
+        recordButton.layer.removeAllAnimations()
+        videoFileOutput?.stopRecording()
+    }
+    
     
     // MARK: - AVCaptureFileOutputRecordingDelegate methods
+    
     func fileOutput(_ output: AVCaptureFileOutput, didFinishRecordingTo outputFileURL: URL, from connections: [AVCaptureConnection], error: Error?) {
         if error != nil {
             print(error)
             return
         }
         
+//        let out = outputFileURL.dataRepresentation
+//        let player = AVPlayer(url: outputFileURL)
+//        let controller = AVPlayerViewController()
+//        controller.player = player
+//        present(controller, animated: true, completion: nil)
+        
+        savedVideoURL = "\(outputFileURL)"
         performSegue(withIdentifier: "videoFinishedSegue", sender: outputFileURL)
     }
     
@@ -223,10 +245,19 @@ class CameraVC: UIViewController, AVCaptureFileOutputRecordingDelegate {
         }
     }
     
+    // recording method
+    func recordingMethod() {
+        
+    }
+    
     
     // MARK: - Navigations
     @IBAction func backButton(_ sender: UIBarButtonItem) {
-        self.dismiss(animated: true, completion: nil)
+//        let rootVC = IdekuCVC()
+//        let navRootVC = UINavigationController(rootViewController: rootVC)
+//        UIApplication.shared.keyWindow?.rootViewController = navRootVC
+//        self.navigationController?.popToViewController(rootVC, animated: true)
+        dismiss(animated: true, completion: nil)
     }
     
     
@@ -240,7 +271,7 @@ class CameraVC: UIViewController, AVCaptureFileOutputRecordingDelegate {
             goToFinishedTakingVideo.settings = settings
             goToFinishedTakingVideo.unique = unique
             goToFinishedTakingVideo.booming = booming
-
+            goToFinishedTakingVideo.savedVideoURL = savedVideoURL
         }
     }
     

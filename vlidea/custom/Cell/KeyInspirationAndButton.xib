@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="KeyInspirationAndButton" customModule="vlidea" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="keyInspirationAndButtonCellID" id="KGk-i7-Jjw" customClass="KeyInspirationAndButton" customModule="vlidea" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="413.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inpirasi waktu itu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nsO-q1-q54">
+                        <rect key="frame" x="15" y="15" width="384" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="IPe-9f-I72"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="27"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="4Ry-Q6-7bd">
+                        <rect key="frame" x="11" y="90" width="392" height="170"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="asJ-45-iKc">
+                                <rect key="frame" x="0.0" y="0.0" width="184" height="170"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="judul" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ooa-iy-4Us">
+                                        <rect key="frame" x="0.0" y="0.0" width="184" height="44.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="184" id="pWe-zA-sX4"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="onePhrase" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Eb-79-b3z">
+                                        <rect key="frame" x="0.0" y="62.5" width="184" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="184" id="uAd-SK-hdf"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="collabWith" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EXr-WE-qu5">
+                                        <rect key="frame" x="0.0" y="125.5" width="184" height="44.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="184" id="Q4j-go-kOq"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="EWa-sT-KW5">
+                                <rect key="frame" x="208" y="0.0" width="184" height="170"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="setting" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lLa-ie-EIM">
+                                        <rect key="frame" x="0.0" y="0.0" width="184" height="44.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="184" id="VOT-Dn-bty"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="uniqueFactor" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34T-HX-zre">
+                                        <rect key="frame" x="0.0" y="62.5" width="184" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="184" id="uhz-NL-luv"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="boomingFactor" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hgs-ZC-cxA">
+                                        <rect key="frame" x="0.0" y="125.5" width="184" height="44.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="184" id="EpE-6N-dPm"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="170" id="yRS-VO-Ipa"/>
+                        </constraints>
+                    </stackView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qxg-yV-Njb">
+                        <rect key="frame" x="30" y="313.5" width="354" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="60" id="SHf-mg-fDG"/>
+                        </constraints>
+                        <state key="normal" image="panduanLanjutan"/>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="nsO-q1-q54" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="7iq-6w-3j7"/>
+                    <constraint firstAttribute="trailing" secondItem="qxg-yV-Njb" secondAttribute="trailing" constant="30" id="Gdb-7B-mKW"/>
+                    <constraint firstItem="qxg-yV-Njb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="ZBe-n6-YkF"/>
+                    <constraint firstAttribute="trailing" secondItem="4Ry-Q6-7bd" secondAttribute="trailing" constant="11" id="cnm-hV-hQY"/>
+                    <constraint firstAttribute="trailing" secondItem="nsO-q1-q54" secondAttribute="trailing" constant="15" id="gnh-Iy-fCx"/>
+                    <constraint firstAttribute="bottom" secondItem="qxg-yV-Njb" secondAttribute="bottom" constant="40" id="igD-Mr-gZc"/>
+                    <constraint firstItem="4Ry-Q6-7bd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="11" id="pou-Gj-VMg"/>
+                    <constraint firstItem="4Ry-Q6-7bd" firstAttribute="top" secondItem="nsO-q1-q54" secondAttribute="bottom" constant="25" id="sbl-NP-uJ1"/>
+                    <constraint firstItem="nsO-q1-q54" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="z7P-Vw-bIb"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="panduanLanjutan" width="362" height="41"/>
+    </resources>
+</document>
