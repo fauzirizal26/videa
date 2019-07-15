@@ -11,10 +11,10 @@ import UIKit
 class ContentCell: UICollectionViewCell {
     
     
-    @IBOutlet weak var lockedOrNot: UIImageView!
-    @IBOutlet weak var timerLabel: UILabel!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var thumbnailPicture: UIImageView!
-    
+//    @IBOutlet weak var lockedOrNot: UIImageView!
+//    @IBOutlet weak var timerLabel: UILabel!
+//    @IBOutlet weak var titleLabel: UILabel!
+//    @IBOutlet weak var thumbnailPicture: UIImageView!
+//    
     
 }

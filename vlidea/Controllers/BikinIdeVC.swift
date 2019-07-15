@@ -16,6 +16,10 @@ class BikinIdeVC: UIViewController, UITextFieldDelegate, UIGestureRecognizerDele
     
     
     // variables
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,14 +30,11 @@ class BikinIdeVC: UIViewController, UITextFieldDelegate, UIGestureRecognizerDele
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(viewTapped(recognizer:)))
         tapGesture.delegate = self
         view.addGestureRecognizer(tapGesture)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         
+        
+        // navBar configuration
         navBar.isTranslucent = false
         navBar.shadowImage = UIImage()
-        
     }
     
     
@@ -62,6 +63,7 @@ class BikinIdeVC: UIViewController, UITextFieldDelegate, UIGestureRecognizerDele
             self.present(alert, animated: true, completion: nil)
             alert.addAction(action)
         }
+        
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

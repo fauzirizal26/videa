@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 private let reuseIdentifier = "Cell"
 
@@ -17,9 +18,10 @@ class IdekuCVC: UIViewController, UICollectionViewDelegate, UICollectionViewData
     
     // variables
     let testArray = ["a", "b", "c", "d", "e"]
-    let contentCellSize = CGSize(width: 375, height: 455)
+    let dataKonten = [Konten]()
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    
+    // MARK: - View
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -45,9 +47,9 @@ class IdekuCVC: UIViewController, UICollectionViewDelegate, UICollectionViewData
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        collectionContent.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "contentCell")
-        collectionContent.delegate = self
-        collectionContent.dataSource = self
+//        collectionContent.register(UINib(nibName: "ContentCollectionCell", bundle: nil), forCellWithReuseIdentifier: "contentCellID")
+//        collectionContent.delegate = self
+//        collectionContent.dataSource = self
     }
 
     /*
@@ -59,6 +61,13 @@ class IdekuCVC: UIViewController, UICollectionViewDelegate, UICollectionViewData
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // MARK: - Fetching data from Core Data
+    
+    func loadData() {
+        let request: NSFetchRequest = Konten.fetchRequest()
+    }
+    
 
     
     // MARK: UICollectionViewDataSource
@@ -71,17 +80,18 @@ class IdekuCVC: UIViewController, UICollectionViewDelegate, UICollectionViewData
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return testArray.count
+        return 1
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cardCell", for: indexPath) as! ContentCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "contentCellID", for: indexPath) as! ContentCollectionCell
     
         // Configure the cell
-        cell.timerLabel.text = testArray[indexPath.row]
-        cell.lockedOrNot.image = #imageLiteral(resourceName: "time")
-        cell.thumbnailPicture.image = #imageLiteral(resourceName: "DSC_0093")
+//        cell.timerLabel.text = testArray[indexPath.row]
+//        cell.lockedOrNot.image = #imageLiteral(resourceName: "time")
+//        cell.thumbnailPicture.image = #imageLiteral(resourceName: "DSC_0093")
+//        cell.titleLabel.text = dataKonten[indexPath.row].judul
     
         return cell
     }

@@ -23,6 +23,19 @@
 		D0CEA62522D71BE80058FB3E /* ContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CEA62422D71BE80058FB3E /* ContentCell.swift */; };
 		D0CEA62722D738680058FB3E /* lockedContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CEA62622D738680058FB3E /* lockedContentVC.swift */; };
 		D0CEA62922D8789E0058FB3E /* FinishedTakingVideoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CEA62822D8789E0058FB3E /* FinishedTakingVideoVC.swift */; };
+		D0EA2BD822D9D079005AA427 /* DataInspirasiClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EA2BD722D9D079005AA427 /* DataInspirasiClass.swift */; };
+		D0EA2BDA22D9E736005AA427 /* navigationCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EA2BD922D9E736005AA427 /* navigationCustom.swift */; };
+		D0EA2BDC22D9F155005AA427 /* DatePickerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EA2BDB22D9F155005AA427 /* DatePickerModel.swift */; };
+		D0EA2BDE22DB5036005AA427 /* UnlockedContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EA2BDD22DB5036005AA427 /* UnlockedContentVC.swift */; };
+		D0EA2BE222DB544B005AA427 /* HeaderAndThumbnailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EA2BE022DB544B005AA427 /* HeaderAndThumbnailCell.swift */; };
+		D0EA2BE322DB544B005AA427 /* HeaderAndThumbnailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0EA2BE122DB544B005AA427 /* HeaderAndThumbnailCell.xib */; };
+		D0EA2BE622DB576E005AA427 /* StorylineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EA2BE422DB576E005AA427 /* StorylineCell.swift */; };
+		D0EA2BE722DB576E005AA427 /* StorylineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0EA2BE522DB576E005AA427 /* StorylineCell.xib */; };
+		D0EA2BEA22DB5ACC005AA427 /* KeyInspirationAndButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EA2BE822DB5ACB005AA427 /* KeyInspirationAndButton.swift */; };
+		D0EA2BEB22DB5ACC005AA427 /* KeyInspirationAndButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0EA2BE922DB5ACC005AA427 /* KeyInspirationAndButton.xib */; };
+		D0EA2BED22DC7762005AA427 /* ContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0EA2BEC22DC7761005AA427 /* ContentCell.xib */; };
+		D0EA2BF022DC78FB005AA427 /* ContentCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EA2BEE22DC78FB005AA427 /* ContentCollectionCell.swift */; };
+		D0EA2BF122DC78FB005AA427 /* ContentCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0EA2BEF22DC78FB005AA427 /* ContentCollectionCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +57,19 @@
 		D0CEA62422D71BE80058FB3E /* ContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCell.swift; sourceTree = "<group>"; };
 		D0CEA62622D738680058FB3E /* lockedContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lockedContentVC.swift; sourceTree = "<group>"; };
 		D0CEA62822D8789E0058FB3E /* FinishedTakingVideoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedTakingVideoVC.swift; sourceTree = "<group>"; };
+		D0EA2BD722D9D079005AA427 /* DataInspirasiClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataInspirasiClass.swift; sourceTree = "<group>"; };
+		D0EA2BD922D9E736005AA427 /* navigationCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = navigationCustom.swift; sourceTree = "<group>"; };
+		D0EA2BDB22D9F155005AA427 /* DatePickerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerModel.swift; sourceTree = "<group>"; };
+		D0EA2BDD22DB5036005AA427 /* UnlockedContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockedContentVC.swift; sourceTree = "<group>"; };
+		D0EA2BE022DB544B005AA427 /* HeaderAndThumbnailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderAndThumbnailCell.swift; sourceTree = "<group>"; };
+		D0EA2BE122DB544B005AA427 /* HeaderAndThumbnailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderAndThumbnailCell.xib; sourceTree = "<group>"; };
+		D0EA2BE422DB576E005AA427 /* StorylineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorylineCell.swift; sourceTree = "<group>"; };
+		D0EA2BE522DB576E005AA427 /* StorylineCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StorylineCell.xib; sourceTree = "<group>"; };
+		D0EA2BE822DB5ACB005AA427 /* KeyInspirationAndButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyInspirationAndButton.swift; sourceTree = "<group>"; };
+		D0EA2BE922DB5ACC005AA427 /* KeyInspirationAndButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyInspirationAndButton.xib; sourceTree = "<group>"; };
+		D0EA2BEC22DC7761005AA427 /* ContentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentCell.xib; sourceTree = "<group>"; };
+		D0EA2BEE22DC78FB005AA427 /* ContentCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCollectionCell.swift; sourceTree = "<group>"; };
+		D0EA2BEF22DC78FB005AA427 /* ContentCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentCollectionCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,13 +115,14 @@
 			isa = PBXGroup;
 			children = (
 				D062BCC722D328C400A3F376 /* AppDelegate.swift */,
+				D062BCF122D48DDA00A3F376 /* IdekuCVC.swift */,
 				D062BCE222D3340500A3F376 /* BikinIdeVC.swift */,
 				D062BCE922D33E3800A3F376 /* BrainstormVC.swift */,
 				D062BCEF22D48B6200A3F376 /* CameraVC.swift */,
-				D062BCF122D48DDA00A3F376 /* IdekuCVC.swift */,
 				D0CEA62822D8789E0058FB3E /* FinishedTakingVideoVC.swift */,
-				D0CEA62622D738680058FB3E /* lockedContentVC.swift */,
 				D01D1EE622D8F931006776D9 /* SetLockedTimerVC.swift */,
+				D0CEA62622D738680058FB3E /* lockedContentVC.swift */,
+				D0EA2BDD22DB5036005AA427 /* UnlockedContentVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -122,6 +149,8 @@
 			isa = PBXGroup;
 			children = (
 				D062BCCE22D328C400A3F376 /* vlidea.xcdatamodeld */,
+				D0EA2BD722D9D079005AA427 /* DataInspirasiClass.swift */,
+				D0EA2BDB22D9F155005AA427 /* DatePickerModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -129,12 +158,30 @@
 		D062BCE422D337D700A3F376 /* custom */ = {
 			isa = PBXGroup;
 			children = (
+				D0EA2BDF22DB53F6005AA427 /* Cell */,
 				D062BCE522D337E500A3F376 /* RoundShapeButton.swift */,
 				D062BCE722D338B300A3F376 /* TextFieldStyle.swift */,
 				D062BCED22D36F6500A3F376 /* LabelDesign.swift */,
-				D0CEA62422D71BE80058FB3E /* ContentCell.swift */,
+				D0EA2BD922D9E736005AA427 /* navigationCustom.swift */,
 			);
 			path = custom;
+			sourceTree = "<group>";
+		};
+		D0EA2BDF22DB53F6005AA427 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D0CEA62422D71BE80058FB3E /* ContentCell.swift */,
+				D0EA2BE022DB544B005AA427 /* HeaderAndThumbnailCell.swift */,
+				D0EA2BE122DB544B005AA427 /* HeaderAndThumbnailCell.xib */,
+				D0EA2BE422DB576E005AA427 /* StorylineCell.swift */,
+				D0EA2BE522DB576E005AA427 /* StorylineCell.xib */,
+				D0EA2BE822DB5ACB005AA427 /* KeyInspirationAndButton.swift */,
+				D0EA2BE922DB5ACC005AA427 /* KeyInspirationAndButton.xib */,
+				D0EA2BEC22DC7761005AA427 /* ContentCell.xib */,
+				D0EA2BEE22DC78FB005AA427 /* ContentCollectionCell.swift */,
+				D0EA2BEF22DC78FB005AA427 /* ContentCollectionCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,9 +242,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0EA2BEB22DB5ACC005AA427 /* KeyInspirationAndButton.xib in Resources */,
+				D0EA2BF122DC78FB005AA427 /* ContentCollectionCell.xib in Resources */,
 				D062BCD522D328C600A3F376 /* LaunchScreen.storyboard in Resources */,
+				D0EA2BE722DB576E005AA427 /* StorylineCell.xib in Resources */,
 				D062BCD222D328C600A3F376 /* Assets.xcassets in Resources */,
 				D062BCCD22D328C400A3F376 /* Main.storyboard in Resources */,
+				D0EA2BED22DC7762005AA427 /* ContentCell.xib in Resources */,
+				D0EA2BE322DB544B005AA427 /* HeaderAndThumbnailCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,18 +261,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				D062BCF222D48DDA00A3F376 /* IdekuCVC.swift in Sources */,
+				D0EA2BDE22DB5036005AA427 /* UnlockedContentVC.swift in Sources */,
 				D0CEA62922D8789E0058FB3E /* FinishedTakingVideoVC.swift in Sources */,
+				D0EA2BF022DC78FB005AA427 /* ContentCollectionCell.swift in Sources */,
 				D062BCF022D48B6200A3F376 /* CameraVC.swift in Sources */,
 				D062BCE622D337E500A3F376 /* RoundShapeButton.swift in Sources */,
+				D0EA2BE222DB544B005AA427 /* HeaderAndThumbnailCell.swift in Sources */,
 				D01D1EE722D8F931006776D9 /* SetLockedTimerVC.swift in Sources */,
 				D062BCC822D328C400A3F376 /* AppDelegate.swift in Sources */,
+				D0EA2BEA22DB5ACC005AA427 /* KeyInspirationAndButton.swift in Sources */,
+				D0EA2BD822D9D079005AA427 /* DataInspirasiClass.swift in Sources */,
 				D062BCE322D3340500A3F376 /* BikinIdeVC.swift in Sources */,
 				D062BCD022D328C400A3F376 /* vlidea.xcdatamodeld in Sources */,
+				D0EA2BDA22D9E736005AA427 /* navigationCustom.swift in Sources */,
 				D062BCE822D338B300A3F376 /* TextFieldStyle.swift in Sources */,
 				D0CEA62522D71BE80058FB3E /* ContentCell.swift in Sources */,
 				D062BCEE22D36F6500A3F376 /* LabelDesign.swift in Sources */,
+				D0EA2BDC22D9F155005AA427 /* DatePickerModel.swift in Sources */,
 				D062BCEA22D33E3800A3F376 /* BrainstormVC.swift in Sources */,
 				D0CEA62722D738680058FB3E /* lockedContentVC.swift in Sources */,
+				D0EA2BE622DB576E005AA427 /* StorylineCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

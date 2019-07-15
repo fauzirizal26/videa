@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zNu-yh-pyx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vq1-dK-dfs">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -120,7 +120,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Right Accessory"/>
                                 <connections>
-                                    <segue destination="ed6-Ou-aKZ" kind="presentation" id="mkb-ys-OXg"/>
+                                    <segue destination="Oar-dF-9fl" kind="presentation" id="mkb-ys-OXg"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -130,7 +130,7 @@
                     <navigationItem key="navigationItem" id="BYh-mM-AXG"/>
                     <connections>
                         <outlet property="collectionContent" destination="mtw-Uw-Cps" id="zYy-uq-p3W"/>
-                        <segue destination="iTt-p8-9Oo" kind="show" identifier="lockedContentSegue" id="DOk-fR-hB4"/>
+                        <segue destination="iTt-p8-9Oo" kind="show" identifier="lockedContentSegue" id="Nnp-o1-FeY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ilC-qJ-Y72" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -155,7 +155,7 @@
                                 <rect key="frame" x="40" y="51" width="334" height="74"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cS4-V2-ZDT">
-                                        <rect key="frame" x="0.0" y="0.0" width="138" height="25"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="333" height="25"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="time" translatesAutoresizingMaskIntoConstraints="NO" id="dzh-a7-Jzp">
                                                 <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
@@ -165,9 +165,9 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Belum dibuka" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lyN-Th-ZhB">
-                                                <rect key="frame" x="33" y="0.0" width="105" height="25"/>
+                                                <rect key="frame" x="33" y="0.0" width="300" height="25"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="320" id="K4k-g8-qw4"/>
+                                                    <constraint firstAttribute="width" constant="300" id="K4k-g8-qw4"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="18"/>
                                                 <color key="textColor" red="0.96003705260000005" green="0.74958401919999995" blue="0.2546904385" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -176,9 +176,9 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ABe-1c-VLw">
-                                        <rect key="frame" x="0.0" y="33" width="62" height="41"/>
+                                        <rect key="frame" x="0.0" y="33" width="325" height="41"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="350" id="K65-gE-lpS"/>
+                                            <constraint firstAttribute="width" constant="325" id="K65-gE-lpS"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="35"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -288,7 +288,77 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iyt-Ex-tEN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1207.2463768115942" y="673.66071428571422"/>
+            <point key="canvasLocation" x="1378" y="603"/>
+        </scene>
+        <!--Unlocked ContentVC-->
+        <scene sceneID="X4w-ZY-Ix9">
+            <objects>
+                <viewController id="BvE-lP-oYl" customClass="UnlockedContentVC" customModule="vlidea" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nF7-qG-Nnd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle Copy " translatesAutoresizingMaskIntoConstraints="NO" id="xJQ-cq-KCk">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="88"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="88" id="Nn9-K5-WG3"/>
+                                </constraints>
+                            </imageView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yVt-8K-yeP">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="KRc-V7-k34"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem id="KaP-ob-Hpz">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" image="Chevron" style="plain" id="n7d-JQ-2uZ">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rn7-jn-NCn">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="kosongCell" id="ilE-Zt-BZr">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ilE-Zt-BZr" id="me6-uc-nEr">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BvE-lP-oYl" id="4ao-sO-LXf"/>
+                                    <outlet property="delegate" destination="BvE-lP-oYl" id="2aH-pc-TMG"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="yVt-8K-yeP" firstAttribute="top" secondItem="nF7-qG-Nnd" secondAttribute="top" constant="44" id="AAz-JR-NAZ"/>
+                            <constraint firstItem="xJQ-cq-KCk" firstAttribute="top" secondItem="nF7-qG-Nnd" secondAttribute="top" id="HcQ-2O-onk"/>
+                            <constraint firstAttribute="trailing" secondItem="yVt-8K-yeP" secondAttribute="trailing" id="M1h-zL-td4"/>
+                            <constraint firstItem="xJQ-cq-KCk" firstAttribute="leading" secondItem="nF7-qG-Nnd" secondAttribute="leading" id="PaO-5p-Xj5"/>
+                            <constraint firstAttribute="trailing" secondItem="xJQ-cq-KCk" secondAttribute="trailing" id="UNa-Br-6CZ"/>
+                            <constraint firstItem="rn7-jn-NCn" firstAttribute="top" secondItem="xJQ-cq-KCk" secondAttribute="bottom" id="hJ6-5z-bcY"/>
+                            <constraint firstAttribute="trailing" secondItem="rn7-jn-NCn" secondAttribute="trailing" id="nRo-g3-f5f"/>
+                            <constraint firstAttribute="bottom" secondItem="rn7-jn-NCn" secondAttribute="bottom" id="ong-NF-n1Q"/>
+                            <constraint firstItem="yVt-8K-yeP" firstAttribute="leading" secondItem="nF7-qG-Nnd" secondAttribute="leading" id="vqP-8b-BP8"/>
+                            <constraint firstItem="rn7-jn-NCn" firstAttribute="leading" secondItem="nF7-qG-Nnd" secondAttribute="leading" id="xaT-Ab-noo"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1qM-IE-ifl"/>
+                    </view>
+                    <connections>
+                        <outlet property="isiContentTableView" destination="rn7-jn-NCn" id="rJz-WK-qar"/>
+                        <outlet property="navBar" destination="yVt-8K-yeP" id="fjx-VA-npF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eWc-i5-2cM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1187" y="1264"/>
         </scene>
         <!--Bikin IdeVC-->
         <scene sceneID="Jqp-f6-xin">
@@ -299,10 +369,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="BDC-xK-iwh">
-                                <rect key="frame" x="60" y="293" width="294" height="310"/>
+                                <rect key="frame" x="20" y="302" width="374" height="310"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kepikiran apa hari ini?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NGQ-Vp-rpe">
-                                        <rect key="frame" x="27.5" y="0.0" width="239" height="90"/>
+                                        <rect key="frame" x="67.5" y="0.0" width="239" height="90"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="90" id="LkH-n0-Mje"/>
                                         </constraints>
@@ -311,7 +381,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tulis satu/dua kata tentang idemu..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NQS-NJ-UKL" customClass="TextFieldStyle" customModule="vlidea" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="110" width="294" height="90"/>
+                                        <rect key="frame" x="40" y="110" width="294" height="90"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="90" id="bH0-2m-Zgf"/>
                                         </constraints>
@@ -320,7 +390,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qux-hG-doe">
-                                        <rect key="frame" x="71" y="220" width="152" height="90"/>
+                                        <rect key="frame" x="111" y="220" width="152" height="90"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="90" id="c1e-mp-MUL"/>
@@ -333,9 +403,12 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="310" id="Vx1-cm-MYf"/>
+                                </constraints>
                             </stackView>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pxc-DN-Yh4">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="iac-sP-Ev1"/>
                                 </constraints>
@@ -357,7 +430,9 @@
                             <constraint firstItem="BDC-xK-iwh" firstAttribute="centerX" secondItem="QdE-gU-rOX" secondAttribute="centerX" id="O1R-G7-ExA"/>
                             <constraint firstItem="Pxc-DN-Yh4" firstAttribute="leading" secondItem="QdE-gU-rOX" secondAttribute="leading" id="OuK-5Y-TBv"/>
                             <constraint firstItem="Pxc-DN-Yh4" firstAttribute="top" secondItem="T4s-3A-jgR" secondAttribute="top" id="YLY-hL-YMT"/>
-                            <constraint firstItem="BDC-xK-iwh" firstAttribute="centerY" secondItem="QdE-gU-rOX" secondAttribute="centerY" id="y75-LQ-SC4"/>
+                            <constraint firstAttribute="trailing" secondItem="BDC-xK-iwh" secondAttribute="trailing" constant="20" id="a7o-hu-Xd2"/>
+                            <constraint firstItem="BDC-xK-iwh" firstAttribute="top" secondItem="Pxc-DN-Yh4" secondAttribute="bottom" constant="170" id="qSZ-uk-WB3"/>
+                            <constraint firstItem="BDC-xK-iwh" firstAttribute="leading" secondItem="QdE-gU-rOX" secondAttribute="leading" constant="20" id="yrZ-UE-4Fc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="T4s-3A-jgR"/>
                     </view>
@@ -365,12 +440,12 @@
                     <connections>
                         <outlet property="ideTextField" destination="NQS-NJ-UKL" id="iUf-oQ-m6V"/>
                         <outlet property="navBar" destination="Pxc-DN-Yh4" id="wjn-y5-dhU"/>
-                        <segue destination="qtQ-b0-yLR" kind="show" identifier="goToBrainstorm" id="TNd-3k-9u7"/>
+                        <segue destination="qtQ-b0-yLR" kind="show" identifier="goToBrainstorm" id="uoN-3V-dRe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hlN-ib-wZ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1812" y="-133"/>
+            <point key="canvasLocation" x="2721.739130434783" y="-133.25892857142856"/>
         </scene>
         <!--BrainstormVC-->
         <scene sceneID="Y75-gm-dSd">
@@ -387,7 +462,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FZA-TQ-wma">
-                                <rect key="frame" x="30" y="74" width="354" height="120"/>
+                                <rect key="frame" x="30" y="118" width="354" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="0mO-rq-1UQ"/>
                                 </constraints>
@@ -490,7 +565,7 @@ Ayo gabungkan inspirasi ide dari vlog terhits minggu ini!</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cAZ-fT-86P">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="EqV-U5-VJc"/>
                                 </constraints>
@@ -526,10 +601,12 @@ Ayo gabungkan inspirasi ide dari vlog terhits minggu ini!</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DPS-DY-5mY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="YHL-6L-HYN"/>
                     <connections>
+                        <outlet property="backToBikinIdeOutlet" destination="IFW-Wg-00Y" id="oHQ-f7-XwE"/>
                         <outlet property="boomingFactorsLabel" destination="RSW-F4-bh3" id="PAS-3O-Fpm"/>
                         <outlet property="collabWithLabel" destination="u2U-Pe-8Bb" id="wn5-vD-u9Z"/>
-                        <outlet property="inspirasiLainOutlet" destination="Fhf-bx-moy" id="wMC-d3-rtG"/>
+                        <outlet property="inspirasiLainOutlet" destination="Fhf-bx-moy" id="Ptv-u9-HBp"/>
                         <outlet property="judulLabel" destination="F4b-QU-SeR" id="uoM-Dj-wZa"/>
                         <outlet property="keyInspirationLabel" destination="FZA-TQ-wma" id="dfS-kw-DMy"/>
                         <outlet property="kontenSV" destination="fP3-hw-MjA" id="LUN-MV-thz"/>
@@ -545,7 +622,7 @@ Ayo gabungkan inspirasi ide dari vlog terhits minggu ini!</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iHJ-Jc-Wxe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2861" y="-133"/>
+            <point key="canvasLocation" x="3771.0144927536235" y="-133.25892857142856"/>
         </scene>
         <!--CameraVC-->
         <scene sceneID="FVf-6d-67A">
@@ -574,23 +651,23 @@ Ayo gabungkan inspirasi ide dari vlog terhits minggu ini!</string>
                                 </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jDQ-Uz-Ctw">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="AJH-By-7Yp"/>
                                 </constraints>
                                 <items>
                                     <navigationItem id="78n-e4-5ge">
-                                        <barButtonItem key="leftBarButtonItem" image="Chevron" id="gcK-Ax-M3A">
-                                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="stop" id="Sgx-Co-iUu">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
-                                                <action selector="backButton:" destination="L1G-ki-LeG" id="WB2-L8-Dpd"/>
+                                                <action selector="backButton:" destination="L1G-ki-LeG" id="BfY-Jf-FWO"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="268-e9-6ri">
-                                <rect key="frame" x="20" y="88" width="374" height="145"/>
+                                <rect key="frame" x="20" y="132" width="374" height="145"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Key Inspiration:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tjg-zd-dEX">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="43"/>
@@ -689,7 +766,22 @@ Ayo gabungkan inspirasi ide dari vlog terhits minggu ini!</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lhd-M0-Nwb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3961" y="-133"/>
+            <point key="canvasLocation" x="4871.0144927536239" y="-133.25892857142856"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="8W4-Z5-wRK">
+            <objects>
+                <viewController id="5BR-4R-LlB" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Uxc-BM-uAZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="njA-Sm-zIE"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="la4-S3-oYv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5642.0289855072469" y="391.74107142857139"/>
         </scene>
         <!--Finished Taking VideoVC-->
         <scene sceneID="grL-Tn-pFK">
@@ -722,7 +814,7 @@ Ayo gabungkan inspirasi ide dari vlog terhits minggu ini!</string>
                                         <rect key="frame" x="0.0" y="60" width="354" height="60"/>
                                         <state key="normal" image="lanjut"/>
                                         <connections>
-                                            <action selector="saveButton:" destination="c2Y-JN-Qis" eventType="touchUpInside" id="A10-s5-lhz"/>
+                                            <action selector="lanjutButton:" destination="c2Y-JN-Qis" eventType="touchUpInside" id="jEU-go-DoV"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -744,12 +836,12 @@ Ayo gabungkan inspirasi ide dari vlog terhits minggu ini!</string>
                         <viewLayoutGuide key="safeArea" id="luO-cC-lYE"/>
                     </view>
                     <connections>
-                        <segue destination="PRg-mh-AVt" kind="presentation" identifier="finishedTakingVideoSegue" id="oJw-ha-vzF"/>
+                        <segue destination="zNu-yh-pyx" kind="show" identifier="lanjutSegue" id="nSx-bQ-T4f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o6S-C7-9cK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5061" y="-133"/>
+            <point key="canvasLocation" x="5823.188405797102" y="-318.08035714285711"/>
         </scene>
         <!--Set Locked TimerVC-->
         <scene sceneID="EKE-l0-7FR">
@@ -776,18 +868,34 @@ Ayo gabungkan inspirasi ide dari vlog terhits minggu ini!</string>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="qMG-y0-37e"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="dataSource" destination="zNu-yh-pyx" id="uyq-cC-Qf1"/>
+                                            <outlet property="delegate" destination="zNu-yh-pyx" id="bPF-Rs-Q2B"/>
+                                        </connections>
                                     </pickerView>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kc6-VW-tNi">
                                         <rect key="frame" x="60" y="0.0" width="112" height="220"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="zNu-yh-pyx" id="cHd-LL-OSU"/>
+                                            <outlet property="delegate" destination="zNu-yh-pyx" id="V14-GP-xDX"/>
+                                        </connections>
                                     </pickerView>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iKa-lo-Y4O">
                                         <rect key="frame" x="182" y="0.0" width="50" height="220"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="1xD-Sr-LvP"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="dataSource" destination="zNu-yh-pyx" id="u6S-16-eVZ"/>
+                                            <outlet property="delegate" destination="zNu-yh-pyx" id="ke7-fV-YpW"/>
+                                        </connections>
                                     </pickerView>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uk5-R0-cm0">
                                         <rect key="frame" x="242" y="0.0" width="112" height="220"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="zNu-yh-pyx" id="roU-7e-xxP"/>
+                                            <outlet property="delegate" destination="zNu-yh-pyx" id="fF2-T5-dPh"/>
+                                        </connections>
                                     </pickerView>
                                 </subviews>
                                 <constraints>
@@ -800,6 +908,9 @@ Ayo gabungkan inspirasi ide dari vlog terhits minggu ini!</string>
                                     <constraint firstAttribute="height" constant="60" id="7M6-nF-Yqz"/>
                                 </constraints>
                                 <state key="normal" image="Kunci"/>
+                                <connections>
+                                    <action selector="kunciButton:" destination="zNu-yh-pyx" eventType="touchUpInside" id="fdy-Nc-fsr"/>
+                                </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iHN-jB-eie">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -840,7 +951,7 @@ Ayo gabungkan inspirasi ide dari vlog terhits minggu ini!</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eS5-8N-DA9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5902.898550724638" y="-133.25892857142856"/>
+            <point key="canvasLocation" x="6733" y="-696"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Fkj-eO-eJl">
@@ -861,6 +972,24 @@ Ayo gabungkan inspirasi ide dari vlog terhits minggu ini!</string>
             </objects>
             <point key="canvasLocation" x="-720.28985507246387" y="135.9375"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="35r-Xj-NXc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Oar-dF-9fl" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MVW-a0-P9J">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ed6-Ou-aKZ" kind="relationship" relationship="rootViewController" id="83T-A9-Sgu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gSv-Cx-HU6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1811.594202898551" y="-133.25892857142856"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Chevron" width="12" height="21"/>
@@ -878,6 +1007,7 @@ Ayo gabungkan inspirasi ide dari vlog terhits minggu ini!</string>
         <image name="ulangRekaman" width="362" height="41"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="mkb-ys-OXg"/>
         <segue reference="Cov-LQ-gE9"/>
     </inferredMetricsTieBreakers>
 </document>

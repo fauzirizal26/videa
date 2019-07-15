@@ -22,6 +22,7 @@ class FinishedTakingVideoVC: UIViewController {
     var savedVideoURL = ""
     
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,45 +31,41 @@ class FinishedTakingVideoVC: UIViewController {
     
     
     @IBAction func cancelButton(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Yakin mau ulang?", message: "Video mu tadi akan hilang", preferredStyle: .alert)
         
-    }
-    
-    @IBAction func saveButton(_ sender: UIButton) {
-        let simpanData = Konten(context: self.context)
-        simpanData.judul = judul
-        simpanData.onePhrase = onePhrase
-        simpanData.collabWith = collabWith
-        simpanData.setting = settings
-        simpanData.uniqueFactor = unique
-        simpanData.boomingFactor = booming
-        
-        dataKonten.append(simpanData)
-        saveData()
-        
-        performSegue(withIdentifier: "finishedTakingVideoSegue", sender: self)
-    }
-    
-    // MARK: - Core Data
-    
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    var dataKonten = [Konten]()
-    
-    func saveData() {
-        do {
-            try context.save()
-        } catch {
-            print("error: \(error)")
+        let ulang = UIAlertAction(title: "Ulang", style: .default) { (keluar) in
+            
+            self.dismiss(animated: true, completion: nil)
         }
+        
+        let batal = UIAlertAction(title: "Batal", style: .cancel, handler: nil)
+        
+        alert.addAction(batal)
+        alert.addAction(ulang)
+        
+        present(alert, animated: true, completion: nil)
+        
     }
     
-    /*
+    @IBAction func lanjutButton(_ sender: UIButton) {
+        performSegue(withIdentifier: "lanjutSegue", sender: self)
+    }
+    
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "lanjutSegue" {
+            let nextVC = segue.destination as! SetLockedTimerVC
+            nextVC.judul = judul
+            nextVC.onePhrase = onePhrase
+            nextVC.collabWith = collabWith
+            nextVC.settings = settings
+            nextVC.unique = unique
+            nextVC.booming = booming
+            nextVC.savedVideoURL = savedVideoURL
+        }
     }
-    */
 
 }
