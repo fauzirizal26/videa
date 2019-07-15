@@ -367,7 +367,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LQZ82U4W9U;
+				DEVELOPMENT_TEAM = FMBNG35Z38;
 				INFOPLIST_FILE = "$(SRCROOT)/vlidea/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -385,7 +385,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LQZ82U4W9U;
+				DEVELOPMENT_TEAM = FMBNG35Z38;
 				INFOPLIST_FILE = "$(SRCROOT)/vlidea/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

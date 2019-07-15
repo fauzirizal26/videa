@@ -96,8 +96,8 @@ class BrainstormVC: UIViewController {
     
     
     @IBAction func backToBikinIdeButton(_ sender: UIBarButtonItem) {
-        
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
+//        self.dismiss(animated: true, completion: nil)
     }
     
     // reshuffle
