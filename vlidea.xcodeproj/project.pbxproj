@@ -20,7 +20,6 @@
 		D062BCEE22D36F6500A3F376 /* LabelDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = D062BCED22D36F6500A3F376 /* LabelDesign.swift */; };
 		D062BCF022D48B6200A3F376 /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D062BCEF22D48B6200A3F376 /* CameraVC.swift */; };
 		D062BCF222D48DDA00A3F376 /* IdekuCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D062BCF122D48DDA00A3F376 /* IdekuCVC.swift */; };
-		D0CEA62522D71BE80058FB3E /* ContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CEA62422D71BE80058FB3E /* ContentCell.swift */; };
 		D0CEA62722D738680058FB3E /* lockedContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CEA62622D738680058FB3E /* lockedContentVC.swift */; };
 		D0CEA62922D8789E0058FB3E /* FinishedTakingVideoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CEA62822D8789E0058FB3E /* FinishedTakingVideoVC.swift */; };
 		D0EA2BD822D9D079005AA427 /* DataInspirasiClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EA2BD722D9D079005AA427 /* DataInspirasiClass.swift */; };
@@ -33,7 +32,6 @@
 		D0EA2BE722DB576E005AA427 /* StorylineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0EA2BE522DB576E005AA427 /* StorylineCell.xib */; };
 		D0EA2BEA22DB5ACC005AA427 /* KeyInspirationAndButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EA2BE822DB5ACB005AA427 /* KeyInspirationAndButton.swift */; };
 		D0EA2BEB22DB5ACC005AA427 /* KeyInspirationAndButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0EA2BE922DB5ACC005AA427 /* KeyInspirationAndButton.xib */; };
-		D0EA2BED22DC7762005AA427 /* ContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0EA2BEC22DC7761005AA427 /* ContentCell.xib */; };
 		D0EA2BF022DC78FB005AA427 /* ContentCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EA2BEE22DC78FB005AA427 /* ContentCollectionCell.swift */; };
 		D0EA2BF122DC78FB005AA427 /* ContentCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0EA2BEF22DC78FB005AA427 /* ContentCollectionCell.xib */; };
 /* End PBXBuildFile section */
@@ -54,7 +52,6 @@
 		D062BCED22D36F6500A3F376 /* LabelDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelDesign.swift; sourceTree = "<group>"; };
 		D062BCEF22D48B6200A3F376 /* CameraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraVC.swift; sourceTree = "<group>"; };
 		D062BCF122D48DDA00A3F376 /* IdekuCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdekuCVC.swift; sourceTree = "<group>"; };
-		D0CEA62422D71BE80058FB3E /* ContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCell.swift; sourceTree = "<group>"; };
 		D0CEA62622D738680058FB3E /* lockedContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lockedContentVC.swift; sourceTree = "<group>"; };
 		D0CEA62822D8789E0058FB3E /* FinishedTakingVideoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedTakingVideoVC.swift; sourceTree = "<group>"; };
 		D0EA2BD722D9D079005AA427 /* DataInspirasiClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataInspirasiClass.swift; sourceTree = "<group>"; };
@@ -67,7 +64,6 @@
 		D0EA2BE522DB576E005AA427 /* StorylineCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StorylineCell.xib; sourceTree = "<group>"; };
 		D0EA2BE822DB5ACB005AA427 /* KeyInspirationAndButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyInspirationAndButton.swift; sourceTree = "<group>"; };
 		D0EA2BE922DB5ACC005AA427 /* KeyInspirationAndButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyInspirationAndButton.xib; sourceTree = "<group>"; };
-		D0EA2BEC22DC7761005AA427 /* ContentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentCell.xib; sourceTree = "<group>"; };
 		D0EA2BEE22DC78FB005AA427 /* ContentCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCollectionCell.swift; sourceTree = "<group>"; };
 		D0EA2BEF22DC78FB005AA427 /* ContentCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentCollectionCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -170,14 +166,12 @@
 		D0EA2BDF22DB53F6005AA427 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				D0CEA62422D71BE80058FB3E /* ContentCell.swift */,
 				D0EA2BE022DB544B005AA427 /* HeaderAndThumbnailCell.swift */,
 				D0EA2BE122DB544B005AA427 /* HeaderAndThumbnailCell.xib */,
 				D0EA2BE422DB576E005AA427 /* StorylineCell.swift */,
 				D0EA2BE522DB576E005AA427 /* StorylineCell.xib */,
 				D0EA2BE822DB5ACB005AA427 /* KeyInspirationAndButton.swift */,
 				D0EA2BE922DB5ACC005AA427 /* KeyInspirationAndButton.xib */,
-				D0EA2BEC22DC7761005AA427 /* ContentCell.xib */,
 				D0EA2BEE22DC78FB005AA427 /* ContentCollectionCell.swift */,
 				D0EA2BEF22DC78FB005AA427 /* ContentCollectionCell.xib */,
 			);
@@ -248,7 +242,6 @@
 				D0EA2BE722DB576E005AA427 /* StorylineCell.xib in Resources */,
 				D062BCD222D328C600A3F376 /* Assets.xcassets in Resources */,
 				D062BCCD22D328C400A3F376 /* Main.storyboard in Resources */,
-				D0EA2BED22DC7762005AA427 /* ContentCell.xib in Resources */,
 				D0EA2BE322DB544B005AA427 /* HeaderAndThumbnailCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,7 +268,6 @@
 				D062BCD022D328C400A3F376 /* vlidea.xcdatamodeld in Sources */,
 				D0EA2BDA22D9E736005AA427 /* navigationCustom.swift in Sources */,
 				D062BCE822D338B300A3F376 /* TextFieldStyle.swift in Sources */,
-				D0CEA62522D71BE80058FB3E /* ContentCell.swift in Sources */,
 				D062BCEE22D36F6500A3F376 /* LabelDesign.swift in Sources */,
 				D0EA2BDC22D9F155005AA427 /* DatePickerModel.swift in Sources */,
 				D062BCEA22D33E3800A3F376 /* BrainstormVC.swift in Sources */,

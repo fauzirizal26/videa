@@ -11,7 +11,7 @@ import CoreData
 
 private let reuseIdentifier = "Cell"
 
-class IdekuCVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class IdekuCVC: UIViewController {
     
     // outlets
     @IBOutlet weak var collectionContent: UICollectionView!
@@ -70,66 +70,71 @@ class IdekuCVC: UIViewController, UICollectionViewDelegate, UICollectionViewData
     
 
     
-    // MARK: UICollectionViewDataSource
+    
 
+}
+
+extension IdekuCVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    // MARK: UICollectionViewDataSource
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
-
+    
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
         return 1
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "contentCellID", for: indexPath) as! ContentCollectionCell
-    
+        
         // Configure the cell
-//        cell.timerLabel.text = testArray[indexPath.row]
-//        cell.lockedOrNot.image = #imageLiteral(resourceName: "time")
-//        cell.thumbnailPicture.image = #imageLiteral(resourceName: "DSC_0093")
-//        cell.titleLabel.text = dataKonten[indexPath.row].judul
-    
+        //        cell.timerLabel.text = testArray[indexPath.row]
+        //        cell.lockedOrNot.image = #imageLiteral(resourceName: "time")
+        //        cell.thumbnailPicture.image = #imageLiteral(resourceName: "DSC_0093")
+        //        cell.titleLabel.text = dataKonten[indexPath.row].judul
+        
         return cell
     }
-
+    
     // MARK: UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         performSegue(withIdentifier: "lockedContentSegue", sender: self)
     }
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
     
-    }
-    */
+    /*
+     // Uncomment this method to specify if the specified item should be highlighted during tracking
+     override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
+     return true
+     }
+     */
+    
+    /*
+     // Uncomment this method to specify if the specified item should be selected
+     override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+     return true
+     }
+     */
+    
+    /*
+     // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
+     override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
+     return false
+     }
+     
+     override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
+     return false
+     }
+     
+     override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
+     
+     }
+     */
     
     // MARK: - cell design
     
@@ -137,6 +142,4 @@ class IdekuCVC: UIViewController, UICollectionViewDelegate, UICollectionViewData
         
         return CGSize(width: 375, height: 455)
     }
-
 }
-
