@@ -17,27 +17,48 @@ class IdekuCVC: UIViewController {
     @IBOutlet weak var collectionContent: UICollectionView!
     
     // variables
+    let backgroundImageController = UIImage(named: "navBar")
     let testArray = ["a", "b", "c", "d", "e"]
-    let dataKonten = [Konten]()
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var dataKonten: [NSManagedObject] = []
     
     // MARK: - View
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        navigationController?.navigationBar.isHidden = true
+        // navigation
+        navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.setBackgroundImage(backgroundImageController, for: .default)
+        navigationController?.navigationBar.isTranslucent = false
         
+        // core data
+        guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else {
+                return
+        }
+        
+        let managedContext =
+            appDelegate.persistentContainer.viewContext
+        
+        //2
+        let fetchRequest =
+            NSFetchRequest<NSManagedObject>(entityName: "Konten")
+        
+        //3
+        do {
+            dataKonten = try managedContext.fetch(fetchRequest)
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+        
+        
+        // collection view
+        dataKonten.reverse()
+        collectionContent.reloadData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
-        let backgroundImageController = UIImage(named: "navBar")
-        navigationController?.navigationBar.setBackgroundImage(backgroundImageController, for: .default)
-        navigationController?.navigationBar.isTranslucent = false
-        
-        navigationController?.navigationBar.isHidden = false
     }
 
     override func viewDidLoad() {
@@ -50,17 +71,23 @@ class IdekuCVC: UIViewController {
         collectionContent.register(UINib(nibName: "ContentCollectionCell", bundle: nil), forCellWithReuseIdentifier: "contentCellID")
         collectionContent.delegate = self
         collectionContent.dataSource = self
+        
     }
 
-    /*
+
     // MARK: - Navigation
+     
+     @IBAction func bikinIdeButton(_ sender: UIBarButtonItem) {
+        
+        performSegue(withIdentifier: "goToBikinIde", sender: self)
+     }
+     
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
     }
-    */
     
     // MARK: - Fetching data from Core Data
     
@@ -85,19 +112,30 @@ extension IdekuCVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 1
+        if dataKonten.count < 1 {
+            return 1
+        } else {
+            return dataKonten.count + 1
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "contentCellID", for: indexPath) as! ContentCollectionCell
         
-        cell.lockedUnlockedLabel.text = "Terbuka"
-        cell.titleLabel.text = "Tourism"
-        cell.thumbnailPicture.image = #imageLiteral(resourceName: "DSC_0093")
+        if indexPath.row == dataKonten.count {
+            
+            cell.lockedUnlockedLabel.text = "Terbuka"
+            cell.titleLabel.text = "My First Vlog"
+            cell.thumbnailPicture.image = #imageLiteral(resourceName: "testerThumbnail")
+            
+            return cell
+        } else {
+            cell.lockedUnlockedLabel.text = "Terbuka"
+            cell.titleLabel.text = dataKonten[indexPath.row].value(forKey: "judul") as? String
+            cell.thumbnailPicture.image = #imageLiteral(resourceName: "DSC_0093")
+            return cell
+        }
         
-        
-        return cell
     }
     
     // MARK: UICollectionViewDelegate
@@ -136,9 +174,9 @@ extension IdekuCVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
      */
     
     // MARK: - cell design
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        return CGSize(width: 375, height: 455)
-    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        
+//        return CGSize(width: 375, height: 455)
+//    }
 }

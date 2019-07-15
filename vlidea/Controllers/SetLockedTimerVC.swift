@@ -16,6 +16,7 @@ class SetLockedTimerVC: UIViewController{
     @IBOutlet weak var dayStringPicker: UIPickerView!
     @IBOutlet weak var hourNumPicker: UIPickerView!
     @IBOutlet weak var hourStringPicker: UIPickerView!
+    @IBOutlet weak var navBar: UINavigationBar!
     
     // variables
     let datePickerData = DatePickerModel()
@@ -53,6 +54,13 @@ class SetLockedTimerVC: UIViewController{
         dayNumPicker.selectRow(1, inComponent: 0, animated: true)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navBar.setBackgroundImage(UIImage(named: "navBar"), for: .default)
+        navBar.isTranslucent = false
+        navBar.shadowImage = UIImage()
+    }
     
     // MARK: - Navigation
     @IBAction func cancelButton(_ sender: UIBarButtonItem) {
@@ -84,6 +92,8 @@ class SetLockedTimerVC: UIViewController{
 
         dataKonten.append(simpanData)
         saveData()
+        
+        self.performSegue(withIdentifier: "goBackHomeToIdeku", sender: self)
     }
  
 

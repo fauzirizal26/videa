@@ -15,7 +15,6 @@ class CameraVC: UIViewController, AVCaptureFileOutputRecordingDelegate {
     
     
     // outlets
-    @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var cameraView: UIView!
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var judulLabel: UILabel!
@@ -82,6 +81,15 @@ class CameraVC: UIViewController, AVCaptureFileOutputRecordingDelegate {
         uniqueLabel.text = unique
         boomingLabel.text = booming
     
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+//        navBar.setBackgroundImage(UIImage(), for: .default)
+//        navBar.isTranslucent = true
+//        navBar.shadowImage = UIImage()
+        navigationController?.navigationBar.isHidden = true
     }
     
     
@@ -252,14 +260,10 @@ class CameraVC: UIViewController, AVCaptureFileOutputRecordingDelegate {
     
     
     // MARK: - Navigations
-    @IBAction func backButton(_ sender: UIBarButtonItem) {
-//        let rootVC = IdekuCVC()
-//        let navRootVC = UINavigationController(rootViewController: rootVC)
-//        UIApplication.shared.keyWindow?.rootViewController = navRootVC
-//        self.navigationController?.popToViewController(rootVC, animated: true)
+    
+    @IBAction func exitButton(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
-    
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

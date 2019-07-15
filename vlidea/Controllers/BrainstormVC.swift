@@ -67,8 +67,7 @@ class BrainstormVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let backgroundImageController = UIImage(named: "navBar")
-        navBar.setBackgroundImage(backgroundImageController, for: .default)
+        navBar.setBackgroundImage(UIImage(named: "navBar"), for: .default)
         navBar.isTranslucent = false
         navBar.shadowImage = UIImage()
     }
@@ -77,6 +76,7 @@ class BrainstormVC: UIViewController {
         super.viewWillDisappear(animated)
         
         backToBikinIdeOutlet.isEnabled = true
+        navBar.isHidden = false
     }
     
     

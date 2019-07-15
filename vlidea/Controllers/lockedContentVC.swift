@@ -20,8 +20,14 @@ class lockedContentVC: UIViewController {
         super.viewWillAppear(animated)
         
         // back button navBar
-        let backButtonBar = UIBarButtonItem(image: UIImage(named: "Chevron"), style: .plain, target: navigationController, action: #selector(UINavigationController.popViewController(animated:)))
-        navigationItem.leftBarButtonItem = backButtonBar
+//        let backButtonBar = UIBarButtonItem(image: UIImage(named: "Chevron"), style: .plain, target: navigationController, action: #selector(UINavigationController.popViewController(animated:)))
+//        navigationItem.leftBarButtonItem = backButtonBar
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
     }
     
 
