@@ -47,9 +47,9 @@ class IdekuCVC: UIViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-//        collectionContent.register(UINib(nibName: "ContentCollectionCell", bundle: nil), forCellWithReuseIdentifier: "contentCellID")
-//        collectionContent.delegate = self
-//        collectionContent.dataSource = self
+        collectionContent.register(UINib(nibName: "ContentCollectionCell", bundle: nil), forCellWithReuseIdentifier: "contentCellID")
+        collectionContent.delegate = self
+        collectionContent.dataSource = self
     }
 
     /*
@@ -92,11 +92,10 @@ extension IdekuCVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "contentCellID", for: indexPath) as! ContentCollectionCell
         
-        // Configure the cell
-        //        cell.timerLabel.text = testArray[indexPath.row]
-        //        cell.lockedOrNot.image = #imageLiteral(resourceName: "time")
-        //        cell.thumbnailPicture.image = #imageLiteral(resourceName: "DSC_0093")
-        //        cell.titleLabel.text = dataKonten[indexPath.row].judul
+        cell.lockedUnlockedLabel.text = "Terbuka"
+        cell.titleLabel.text = "Tourism"
+        cell.thumbnailPicture.image = #imageLiteral(resourceName: "DSC_0093")
+        
         
         return cell
     }

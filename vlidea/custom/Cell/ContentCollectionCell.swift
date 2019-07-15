@@ -9,6 +9,12 @@
 import UIKit
 
 class ContentCollectionCell: UICollectionViewCell {
+    
+    // outlets
+    @IBOutlet weak var lockedUnlockedLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var thumbnailPicture: UIImageView!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
