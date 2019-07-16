@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vq1-dK-dfs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BvE-lP-oYl">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -593,37 +593,37 @@ Ayo gabungkan inspirasi ide dari vlog terhits minggu ini!</string>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="268-e9-6ri">
-                                <rect key="frame" x="20" y="59" width="374" height="145"/>
+                                <rect key="frame" x="20" y="59" width="334" height="145"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Key Inspiration:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tjg-zd-dEX">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="43"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="43"/>
                                         <color key="backgroundColor" red="0.23531019687652588" green="0.17245969176292419" blue="0.24314272403717041" alpha="0.2520333904109589" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="22"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="56" translatesAutoresizingMaskIntoConstraints="NO" id="MWw-xw-Mm4">
-                                        <rect key="frame" x="0.0" y="51" width="374" height="94"/>
+                                        <rect key="frame" x="0.0" y="51" width="334" height="94"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gqH-yx-qgj">
-                                                <rect key="frame" x="0.0" y="0.0" width="159" height="94"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="139" height="94"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label1" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NwK-2C-bFt">
-                                                        <rect key="frame" x="0.0" y="0.0" width="159" height="26"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="139" height="26"/>
                                                         <color key="backgroundColor" red="0.23531019689999999" green="0.17245969180000001" blue="0.243142724" alpha="0.2520333904" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="22"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label2" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sVH-JD-TB4">
-                                                        <rect key="frame" x="0.0" y="34" width="159" height="26"/>
+                                                        <rect key="frame" x="0.0" y="34" width="139" height="26"/>
                                                         <color key="backgroundColor" red="0.2353476881980896" green="0.17110463976860046" blue="0.24314481019973755" alpha="0.25" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="22"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label3" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="faT-o4-wUd">
-                                                        <rect key="frame" x="0.0" y="68" width="159" height="26"/>
+                                                        <rect key="frame" x="0.0" y="68" width="139" height="26"/>
                                                         <color key="backgroundColor" red="0.2353476881980896" green="0.17110463976860046" blue="0.24314481019973755" alpha="0.25" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="22"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -632,24 +632,24 @@ Ayo gabungkan inspirasi ide dari vlog terhits minggu ini!</string>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="eus-1q-YcG">
-                                                <rect key="frame" x="215" y="0.0" width="159" height="94"/>
+                                                <rect key="frame" x="195" y="0.0" width="139" height="94"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label4" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eCP-Y7-9ub">
-                                                        <rect key="frame" x="0.0" y="0.0" width="159" height="26"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="139" height="26"/>
                                                         <color key="backgroundColor" red="0.18828889727592468" green="0.13605344295501709" blue="0.19608473777770996" alpha="0.25" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="22"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label5" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k3a-Oq-IYg">
-                                                        <rect key="frame" x="0.0" y="34" width="159" height="26"/>
+                                                        <rect key="frame" x="0.0" y="34" width="139" height="26"/>
                                                         <color key="backgroundColor" red="0.21178078651428223" green="0.15678325295448303" blue="0.219612717628479" alpha="0.25" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="22"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label6" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wyb-3Q-fdA">
-                                                        <rect key="frame" x="0.0" y="68" width="159" height="26"/>
+                                                        <rect key="frame" x="0.0" y="68" width="139" height="26"/>
                                                         <color key="backgroundColor" red="0.18824368715286255" green="0.13718786835670471" blue="0.19216102361679077" alpha="0.25" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="22"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -671,7 +671,7 @@ Ayo gabungkan inspirasi ide dari vlog terhits minggu ini!</string>
                             <constraint firstItem="N1B-R8-Q3X" firstAttribute="leading" secondItem="MCR-i6-ll7" secondAttribute="leading" id="EIL-Hv-Ac8"/>
                             <constraint firstItem="N1B-R8-Q3X" firstAttribute="top" secondItem="MCR-i6-ll7" secondAttribute="top" id="F93-dJ-gQ2"/>
                             <constraint firstAttribute="trailing" secondItem="b4c-03-ZB2" secondAttribute="trailing" constant="149" id="KoR-gp-Yjq"/>
-                            <constraint firstAttribute="trailing" secondItem="268-e9-6ri" secondAttribute="trailing" constant="20" id="MhE-7l-ttM"/>
+                            <constraint firstAttribute="trailing" secondItem="268-e9-6ri" secondAttribute="trailing" constant="60" id="MhE-7l-ttM"/>
                             <constraint firstItem="268-e9-6ri" firstAttribute="leading" secondItem="MCR-i6-ll7" secondAttribute="leading" constant="20" id="PjF-mO-aTK"/>
                             <constraint firstAttribute="bottom" secondItem="N1B-R8-Q3X" secondAttribute="bottom" id="TgG-xU-u4c"/>
                             <constraint firstItem="b4c-03-ZB2" firstAttribute="leading" secondItem="MCR-i6-ll7" secondAttribute="leading" constant="150" id="ezg-1g-IIT"/>
@@ -1499,7 +1499,7 @@ oQAAAAAAAAIBAAAAAAAAAG0AAAAAAAAAAAAAAAAAAIKjA
         <image name="ulangRekaman" width="362" height="41"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Js0-VI-qvq"/>
+        <segue reference="mkb-ys-OXg"/>
         <segue reference="Cov-LQ-gE9"/>
     </inferredMetricsTieBreakers>
 </document>

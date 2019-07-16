@@ -40,11 +40,9 @@ class IdekuCVC: UIViewController {
         let managedContext =
             appDelegate.persistentContainer.viewContext
         
-        //2
         let fetchRequest =
             NSFetchRequest<NSManagedObject>(entityName: "Konten")
         
-        //3
         do {
             dataKonten = try managedContext.fetch(fetchRequest)
         } catch let error as NSError {
