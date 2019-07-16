@@ -10,6 +10,9 @@ import UIKit
 import AVFoundation
 import AVKit
 
+protocol CameraVCDelegate: class {
+    func popToFirstVC()
+}
 
 class CameraVC: UIViewController, AVCaptureFileOutputRecordingDelegate {
     
@@ -33,7 +36,7 @@ class CameraVC: UIViewController, AVCaptureFileOutputRecordingDelegate {
     var booming = ""
     var savedVideoURL = ""
     
-    
+    weak var delegate: CameraVCDelegate?
     
     // variables for camera
     let captureSession = AVCaptureSession()
@@ -85,11 +88,7 @@ class CameraVC: UIViewController, AVCaptureFileOutputRecordingDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-//        navBar.setBackgroundImage(UIImage(), for: .default)
-//        navBar.isTranslucent = true
-//        navBar.shadowImage = UIImage()
-        navigationController?.navigationBar.isHidden = true
+        //navigationController?.navigationBar.isHidden = true
     }
     
     
@@ -140,7 +139,6 @@ class CameraVC: UIViewController, AVCaptureFileOutputRecordingDelegate {
     // MARK: - Action methods
     
     @IBAction func capture(sender: UIButton) {
-//        let oneMinuteTimer = Timer.scheduledTimer(timeInterval: 60, target: self, selector: <#T##Selector#>, userInfo: nil, repeats: false)
         if !isRecording {
             isRecording = true
             
@@ -253,16 +251,13 @@ class CameraVC: UIViewController, AVCaptureFileOutputRecordingDelegate {
         }
     }
     
-    // recording method
-    func recordingMethod() {
-        
-    }
-    
     
     // MARK: - Navigations
     
     @IBAction func exitButton(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
+        self.dismiss(animated: false) {
+            self.delegate?.popToFirstVC()
+        }
     }
     
     

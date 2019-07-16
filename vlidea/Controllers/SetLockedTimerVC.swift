@@ -16,7 +16,6 @@ class SetLockedTimerVC: UIViewController{
     @IBOutlet weak var dayStringPicker: UIPickerView!
     @IBOutlet weak var hourNumPicker: UIPickerView!
     @IBOutlet weak var hourStringPicker: UIPickerView!
-    @IBOutlet weak var navBar: UINavigationBar!
     
     // variables
     let datePickerData = DatePickerModel()
@@ -57,21 +56,16 @@ class SetLockedTimerVC: UIViewController{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        navBar.setBackgroundImage(UIImage(named: "navBar"), for: .default)
-        navBar.isTranslucent = false
-        navBar.shadowImage = UIImage()
     }
     
     // MARK: - Navigation
-    @IBAction func cancelButton(_ sender: UIBarButtonItem) {
-        
+    @IBAction func closeButton(_ sender: UIButton) {
         let alert = UIAlertController(title: "Yakin mau keluar?", message: "Kalau kamu keluar, semua progress tidak akan terekam", preferredStyle: .alert)
         
         let keluar = UIAlertAction(title: "Keluar", style: .default) { (keluar) in
             
             self.performSegue(withIdentifier: "goBackHomeToIdeku", sender: self)
         }
-        
         let batal = UIAlertAction(title: "Batal", style: .cancel, handler: nil)
         
         alert.addAction(batal)
@@ -79,6 +73,8 @@ class SetLockedTimerVC: UIViewController{
         
         present(alert, animated: true, completion: nil)
     }
+    
+    
     
     @IBAction func kunciButton(_ sender: UIButton) {
         let simpanData = Konten(context: self.context)

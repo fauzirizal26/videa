@@ -27,10 +27,7 @@ class IdekuCVC: UIViewController {
         super.viewWillAppear(animated)
         
         // navigation
-        navigationController?.navigationBar.isHidden = false
-        navigationController?.navigationBar.setBackgroundImage(backgroundImageController, for: .default)
-        navigationController?.navigationBar.isTranslucent = false
-        
+        self.buttonKananPlus()
         // core data
         guard let appDelegate =
             UIApplication.shared.delegate as? AppDelegate else {
@@ -67,18 +64,12 @@ class IdekuCVC: UIViewController {
 
         // Register cell classes
         collectionContent.register(UINib(nibName: "ContentCollectionCell", bundle: nil), forCellWithReuseIdentifier: "contentCellID")
-        collectionContent.delegate = self
-        collectionContent.dataSource = self
         
     }
 
 
     // MARK: - Navigation
-     
-     @IBAction func bikinIdeButton(_ sender: UIBarButtonItem) {
-        
-        performSegue(withIdentifier: "goToBikinIde", sender: self)
-     }
+    
      
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -86,16 +77,6 @@ class IdekuCVC: UIViewController {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
     }
-    
-    // MARK: - Fetching data from Core Data
-    
-    func loadData() {
-        let request: NSFetchRequest = Konten.fetchRequest()
-    }
-    
-
-    
-    
 
 }
 

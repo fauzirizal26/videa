@@ -12,19 +12,19 @@ class BikinIdeVC: UIViewController, UITextFieldDelegate, UIGestureRecognizerDele
     
     // outlets
     @IBOutlet weak var ideTextField: TextFieldStyle!
-    @IBOutlet weak var navBar: UINavigationBar!
     
     
     // variables
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        // navBar configuration
+        self.closeButtonKanan()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        ideTextField.delegate = self
         
         // tap gesture
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(viewTapped(recognizer:)))
@@ -32,18 +32,13 @@ class BikinIdeVC: UIViewController, UITextFieldDelegate, UIGestureRecognizerDele
         view.addGestureRecognizer(tapGesture)
         
         
-        // navBar configuration
-        navBar.isTranslucent = false
-        navBar.shadowImage = UIImage()
+        // keyboard
+        ideTextField.becomeFirstResponder()
     }
     
     
     
     // MARK: - Navigation
-    
-    @IBAction func backToIdekuButton(_ sender: UIBarButtonItem) {
-        self.dismiss(animated: true, completion: nil)
-    }
     
     
     @objc func viewTapped(recognizer: UITapGestureRecognizer) {
@@ -70,6 +65,8 @@ class BikinIdeVC: UIViewController, UITextFieldDelegate, UIGestureRecognizerDele
         
         let nextVC = segue.destination as! BrainstormVC
         nextVC.judulBaru = ideTextField.text!
+        nextVC.navigationItem.hidesBackButton = true
+        nextVC.delegate = self
     }
     
     
@@ -84,4 +81,10 @@ class BikinIdeVC: UIViewController, UITextFieldDelegate, UIGestureRecognizerDele
         return true
     }
     
+}
+
+extension BikinIdeVC: BrainstormVCDelegate {
+    func dismissMe() {
+        self.dismiss(animated: true, completion: nil)
+    }
 }

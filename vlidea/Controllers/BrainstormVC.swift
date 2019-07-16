@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol BrainstormVCDelegate: class {
+    func dismissMe()
+}
+
 class BrainstormVC: UIViewController {
     
     // outlets content
@@ -19,17 +23,18 @@ class BrainstormVC: UIViewController {
     @IBOutlet weak var boomingFactorsLabel: UILabel!
     @IBOutlet weak var keyInspirationLabel: UILabel!
     @IBOutlet weak var kontenSV: UIStackView!
-    @IBOutlet weak var navBar: UINavigationBar!
+    @IBOutlet weak var buttonSV: UIStackView!
     
     
+    weak var delegate: BrainstormVCDelegate?
 
     // outlets button animated
     @IBOutlet weak var lanjutOutlet: UIButton!
     @IBOutlet weak var textOnePopped: UILabel!
     @IBOutlet weak var textTwoPopped: UILabel!
-    @IBOutlet weak var backToBikinIdeOutlet: UIBarButtonItem!
     @IBOutlet weak var inspirasiLainOutlet: UIButton!
     
+    var isFromCameraVC = false
     
     
     // variables
@@ -47,8 +52,10 @@ class BrainstormVC: UIViewController {
         super.viewDidLoad()
         
         // hidden texts
-        textOnePopped.frame = CGRect(x: 500, y: 74, width: 354, height: 120)
-        textTwoPopped.frame = CGRect(x: 500, y: 74, width: 354, height: 120)
+        textOnePopped.frame = CGRect(x: 500, y: 10, width: 354, height: 120)
+        textTwoPopped.frame = CGRect(x: 500, y: 10, width: 354, height: 120)
+        
+        
         
 
         
@@ -67,16 +74,25 @@ class BrainstormVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        navBar.setBackgroundImage(UIImage(named: "navBar"), for: .default)
-        navBar.isTranslucent = false
-        navBar.shadowImage = UIImage()
+        self.closeButtonKanan()
+
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
-        backToBikinIdeOutlet.isEnabled = true
-        navBar.isHidden = false
+        if isFromCameraVC {
+            self.delegate?.dismissMe()
+        } else {
+            // do nothing
+        }
+
+        self.view.layer.removeAllAnimations()
+        // hidden texts
+        textOnePopped.frame = CGRect(x: 500, y: 10, width: 354, height: 120)
+        textTwoPopped.frame = CGRect(x: 500, y: 10, width: 354, height: 120)
+        keyInspirationLabel.frame = CGRect(x: 30, y: 103, width: 354, height: 120)
+        buttonSV.frame.origin.y = 702
     }
     
     
@@ -84,10 +100,6 @@ class BrainstormVC: UIViewController {
     // MARK: - Navigation
     
     
-    @IBAction func backToBikinIdeButton(_ sender: UIBarButtonItem) {
-        self.navigationController?.popViewController(animated: true)
-//        self.dismiss(animated: true, completion: nil)
-    }
     
     // reshuffle
     @IBAction func inspirasiLain(_ sender: UIButton) {
@@ -122,9 +134,7 @@ class BrainstormVC: UIViewController {
     // MARK: - ANIMATION STUFF
     func animationOne() {
         UIView.animate(withDuration: 1.5) {
-            self.backToBikinIdeOutlet.isEnabled = false
-            self.inspirasiLainOutlet.frame.origin.y = 1000
-            self.lanjutOutlet.frame.origin.y = 1000
+            self.buttonSV.frame.origin.y = 1000
             self.keyInspirationLabel.frame.origin.x = -500
             self.textOnePopped.frame.origin.x = 30
         }
@@ -144,7 +154,7 @@ class BrainstormVC: UIViewController {
     func progressBarAnimation() {
         let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
     
-        let circularPath = UIBezierPath(arcCenter: CGPoint(x: 207, y: 740), radius: 50, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi, clockwise: true)
+        let circularPath = UIBezierPath(arcCenter: CGPoint(x: 207, y: 700), radius: 50, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi, clockwise: true)
     
         // moving shape
         shapeLayer.path = circularPath.cgPath
@@ -175,8 +185,15 @@ class BrainstormVC: UIViewController {
         goToBrainstormVC.settings = settingsLabel.text!
         goToBrainstormVC.unique = uniqueFactorsLabel.text!
         goToBrainstormVC.booming = boomingFactorsLabel.text!
-        
+        goToBrainstormVC.delegate = self
     }
 
+}
+
+extension BrainstormVC: CameraVCDelegate {
+    func popToFirstVC() {
+        isFromCameraVC = true
+        self.navigationController?.popToRootViewController(animated: false)
+    }
 }
 

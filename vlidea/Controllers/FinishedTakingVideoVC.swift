@@ -29,6 +29,10 @@ class FinishedTakingVideoVC: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
     
     @IBAction func cancelButton(_ sender: UIButton) {
         let alert = UIAlertController(title: "Yakin mau ulang?", message: "Video mu tadi akan hilang", preferredStyle: .alert)
