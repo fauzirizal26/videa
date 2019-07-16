@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BvE-lP-oYl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -217,6 +217,33 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iyt-Ex-tEN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1378" y="603"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="bAa-mc-g37">
+            <objects>
+                <viewController id="Q7E-8Z-N4v" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oez-MF-Lja">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yai-UY-h4T">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="yai-UY-h4T" firstAttribute="leading" secondItem="vtg-VL-R0a" secondAttribute="leading" id="8Pj-VX-fyx"/>
+                            <constraint firstItem="yai-UY-h4T" firstAttribute="trailing" secondItem="vtg-VL-R0a" secondAttribute="trailing" id="o2o-Z6-oOF"/>
+                            <constraint firstAttribute="bottom" secondItem="yai-UY-h4T" secondAttribute="bottom" id="oeA-R2-pq7"/>
+                            <constraint firstItem="yai-UY-h4T" firstAttribute="top" secondItem="oez-MF-Lja" secondAttribute="top" id="uml-gM-BeJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vtg-VL-R0a"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iyn-L8-sZ4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2191.304347826087" y="602.67857142857144"/>
         </scene>
         <!--Unlocked ContentVC-->
         <scene sceneID="X4w-ZY-Ix9">
@@ -574,10 +601,17 @@ Ayo gabungkan inspirasi ide dari vlog terhits minggu ini!</string>
                                             <action selector="exitButton:" destination="L1G-ki-LeG" eventType="touchUpInside" id="ihJ-tk-xAp"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waktu Anda 1 Menit!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lMD-tQ-iH5">
+                                        <rect key="frame" x="128.5" y="626" width="157" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailingMargin" secondItem="BPe-WJ-Okv" secondAttribute="trailing" constant="15" id="0SY-5b-Adp"/>
+                                    <constraint firstItem="lMD-tQ-iH5" firstAttribute="centerX" secondItem="N1B-R8-Q3X" secondAttribute="centerX" id="Qv4-BN-s13"/>
                                     <constraint firstItem="BPe-WJ-Okv" firstAttribute="top" secondItem="N1B-R8-Q3X" secondAttribute="topMargin" constant="10" id="SyP-UE-gkM"/>
                                 </constraints>
                             </view>
@@ -672,6 +706,7 @@ Ayo gabungkan inspirasi ide dari vlog terhits minggu ini!</string>
                             <constraint firstItem="N1B-R8-Q3X" firstAttribute="top" secondItem="MCR-i6-ll7" secondAttribute="top" id="F93-dJ-gQ2"/>
                             <constraint firstAttribute="trailing" secondItem="b4c-03-ZB2" secondAttribute="trailing" constant="149" id="KoR-gp-Yjq"/>
                             <constraint firstAttribute="trailing" secondItem="268-e9-6ri" secondAttribute="trailing" constant="60" id="MhE-7l-ttM"/>
+                            <constraint firstItem="b4c-03-ZB2" firstAttribute="top" secondItem="lMD-tQ-iH5" secondAttribute="bottom" constant="34.5" id="NKM-Zo-G19"/>
                             <constraint firstItem="268-e9-6ri" firstAttribute="leading" secondItem="MCR-i6-ll7" secondAttribute="leading" constant="20" id="PjF-mO-aTK"/>
                             <constraint firstAttribute="bottom" secondItem="N1B-R8-Q3X" secondAttribute="bottom" id="TgG-xU-u4c"/>
                             <constraint firstItem="b4c-03-ZB2" firstAttribute="leading" secondItem="MCR-i6-ll7" secondAttribute="leading" constant="150" id="ezg-1g-IIT"/>
@@ -688,6 +723,7 @@ Ayo gabungkan inspirasi ide dari vlog terhits minggu ini!</string>
                         <outlet property="onePhraseLabel" destination="sVH-JD-TB4" id="W3v-xM-u8R"/>
                         <outlet property="recordButton" destination="b4c-03-ZB2" id="Z2W-Gu-F5x"/>
                         <outlet property="settingsLabel" destination="eCP-Y7-9ub" id="qtj-G7-auV"/>
+                        <outlet property="timerLabel" destination="lMD-tQ-iH5" id="gbQ-wR-huM"/>
                         <outlet property="uniqueLabel" destination="k3a-Oq-IYg" id="wNy-BG-8dT"/>
                         <segue destination="c2Y-JN-Qis" kind="presentation" identifier="videoFinishedSegue" id="cLH-vl-xWc"/>
                     </connections>
@@ -1499,7 +1535,6 @@ oQAAAAAAAAIBAAAAAAAAAG0AAAAAAAAAAAAAAAAAAIKjA
         <image name="ulangRekaman" width="362" height="41"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mkb-ys-OXg"/>
         <segue reference="Cov-LQ-gE9"/>
     </inferredMetricsTieBreakers>
 </document>

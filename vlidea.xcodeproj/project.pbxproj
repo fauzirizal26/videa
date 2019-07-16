@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ABD639BB22DDD92F00FD6AA5 /* LebihLanjutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD639BA22DDD92F00FD6AA5 /* LebihLanjutVC.swift */; };
 		D01D1EE722D8F931006776D9 /* SetLockedTimerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01D1EE622D8F931006776D9 /* SetLockedTimerVC.swift */; };
 		D062BCC822D328C400A3F376 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D062BCC722D328C400A3F376 /* AppDelegate.swift */; };
 		D062BCCD22D328C400A3F376 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D062BCCB22D328C400A3F376 /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ABD639BA22DDD92F00FD6AA5 /* LebihLanjutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LebihLanjutVC.swift; sourceTree = "<group>"; };
 		D01D1EE622D8F931006776D9 /* SetLockedTimerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetLockedTimerVC.swift; sourceTree = "<group>"; };
 		D062BCC422D328C400A3F376 /* vlidea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vlidea.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D062BCC722D328C400A3F376 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				D01D1EE622D8F931006776D9 /* SetLockedTimerVC.swift */,
 				D0CEA62622D738680058FB3E /* lockedContentVC.swift */,
 				D0EA2BDD22DB5036005AA427 /* UnlockedContentVC.swift */,
+				ABD639BA22DDD92F00FD6AA5 /* LebihLanjutVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				D062BCD022D328C400A3F376 /* vlidea.xcdatamodeld in Sources */,
 				D0EA2BDA22D9E736005AA427 /* navigationCustom.swift in Sources */,
 				D062BCE822D338B300A3F376 /* TextFieldStyle.swift in Sources */,
+				ABD639BB22DDD92F00FD6AA5 /* LebihLanjutVC.swift in Sources */,
 				D062BCEE22D36F6500A3F376 /* LabelDesign.swift in Sources */,
 				D0EA2BDC22D9F155005AA427 /* DatePickerModel.swift in Sources */,
 				D062BCEA22D33E3800A3F376 /* BrainstormVC.swift in Sources */,
@@ -419,7 +423,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LQZ82U4W9U;
+				DEVELOPMENT_TEAM = 4ABC3N3RDK;
 				INFOPLIST_FILE = "$(SRCROOT)/vlidea/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -437,7 +441,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LQZ82U4W9U;
+				DEVELOPMENT_TEAM = 4ABC3N3RDK;
 				INFOPLIST_FILE = "$(SRCROOT)/vlidea/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

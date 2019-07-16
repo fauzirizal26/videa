@@ -67,5 +67,17 @@ class FinishedTakingVideoVC: UIViewController {
             nextVC.savedVideoURL = savedVideoURL
         }
     }
+    
+    // Jadi pas ulang rekaman, timernya ngulang lagi
+    override func viewWillDisappear(_ animated: Bool) {
+        resetVC()
 
+    }
+    
+    // function reset VC
+    func resetVC () {
+        UIApplication.shared.windows[0].rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+    }
+    
 }
+

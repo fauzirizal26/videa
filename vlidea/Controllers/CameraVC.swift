@@ -23,6 +23,8 @@ class CameraVC: UIViewController, AVCaptureFileOutputRecordingDelegate {
     @IBOutlet weak var settingsLabel: UILabel!
     @IBOutlet weak var uniqueLabel: UILabel!
     @IBOutlet weak var boomingLabel: UILabel!
+    @IBOutlet weak var timerLabel: UILabel!
+    
     
     // saved text from brainstorm vc
     var judul = ""
@@ -33,6 +35,9 @@ class CameraVC: UIViewController, AVCaptureFileOutputRecordingDelegate {
     var booming = ""
     var savedVideoURL = ""
     
+    // variables for timer
+    var timer:Timer?
+    var milliseconds:Float = 60 * 1000 // 60 untuk 60 detik
     
     
     // variables for camera
@@ -56,6 +61,8 @@ class CameraVC: UIViewController, AVCaptureFileOutputRecordingDelegate {
         setupInputOutput()
         setupPreviewLayer()
         startRunningCaptureSession()
+        
+        
         
         
         toggleCameraGestureRecognizer.direction = .up
@@ -86,13 +93,28 @@ class CameraVC: UIViewController, AVCaptureFileOutputRecordingDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        
+        
 //        navBar.setBackgroundImage(UIImage(), for: .default)
 //        navBar.isTranslucent = true
 //        navBar.shadowImage = UIImage()
         navigationController?.navigationBar.isHidden = true
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        
+    }
     
+    // Timer Methods
+    @objc func timerElapsed() {
+        milliseconds -= 1
+        
+        // Convert to seconds
+        let seconds = String(format: "%.f", milliseconds/1000)
+        
+        // Set Label
+        timerLabel.text = "\(seconds)"
+    }
     // MARK: - Camera settings
     func setupCaptureSession() {
         captureSession.sessionPreset = AVCaptureSession.Preset.high
@@ -146,6 +168,9 @@ class CameraVC: UIViewController, AVCaptureFileOutputRecordingDelegate {
             
             let oneMinuteTimer = Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(doneTakingVideo), userInfo: nil, repeats: false)
             
+            //Timer
+            timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(timerElapsed), userInfo: nil, repeats: true)
+            
             UIView.animate(withDuration: 0.5, delay: 0.0, options: [.repeat, .autoreverse, .allowUserInteraction], animations: { () -> Void in
                 self.recordButton.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
             }, completion: {(done) in
@@ -167,6 +192,7 @@ class CameraVC: UIViewController, AVCaptureFileOutputRecordingDelegate {
             videoFileOutput?.stopRecording()
         }
     }
+    
     
     // function to stop recording
     @objc func doneTakingVideo() {
