@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D91F95822DDDFA7009315F0 /* BukaKunciVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D91F95722DDDFA7009315F0 /* BukaKunciVC.swift */; };
 		D01D1EE722D8F931006776D9 /* SetLockedTimerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01D1EE622D8F931006776D9 /* SetLockedTimerVC.swift */; };
 		D062BCC822D328C400A3F376 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D062BCC722D328C400A3F376 /* AppDelegate.swift */; };
 		D062BCCD22D328C400A3F376 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D062BCCB22D328C400A3F376 /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5D91F95722DDDFA7009315F0 /* BukaKunciVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BukaKunciVC.swift; sourceTree = "<group>"; };
 		D01D1EE622D8F931006776D9 /* SetLockedTimerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetLockedTimerVC.swift; sourceTree = "<group>"; };
 		D062BCC422D328C400A3F376 /* vlidea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vlidea.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D062BCC722D328C400A3F376 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				D01D1EE622D8F931006776D9 /* SetLockedTimerVC.swift */,
 				D0CEA62622D738680058FB3E /* lockedContentVC.swift */,
 				D0EA2BDD22DB5036005AA427 /* UnlockedContentVC.swift */,
+				5D91F95722DDDFA7009315F0 /* BukaKunciVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				D062BCC822D328C400A3F376 /* AppDelegate.swift in Sources */,
 				D0EA2BEA22DB5ACC005AA427 /* KeyInspirationAndButton.swift in Sources */,
 				D0EA2BD822D9D079005AA427 /* DataInspirasiClass.swift in Sources */,
+				5D91F95822DDDFA7009315F0 /* BukaKunciVC.swift in Sources */,
 				D062BCE322D3340500A3F376 /* BikinIdeVC.swift in Sources */,
 				D062BCD022D328C400A3F376 /* vlidea.xcdatamodeld in Sources */,
 				D0EA2BDA22D9E736005AA427 /* navigationCustom.swift in Sources */,
