@@ -8,8 +8,11 @@
 
 import UIKit
 import CoreData
+import AVFoundation
 
 private let reuseIdentifier = "Cell"
+
+
 
 class IdekuCVC: UIViewController {
     
@@ -18,9 +21,10 @@ class IdekuCVC: UIViewController {
     
     // variables
     let backgroundImageController = UIImage(named: "navBar")
-    let testArray = ["a", "b", "c", "d", "e"]
     var dataKonten: [NSManagedObject] = []
-    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+
+  
     // MARK: - View
     
     override func viewWillAppear(_ animated: Bool) {
@@ -46,7 +50,6 @@ class IdekuCVC: UIViewController {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
         
-        
         // collection view
         dataKonten.reverse()
         collectionContent.reloadData()
@@ -66,16 +69,38 @@ class IdekuCVC: UIViewController {
         collectionContent.register(UINib(nibName: "ContentCollectionCell", bundle: nil), forCellWithReuseIdentifier: "contentCellID")
         
     }
-
-
-    // MARK: - Navigation
     
-     
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+    // MARK: - Thumbnail
+    func videoPreviewUIImage(moviePath: String) -> UIImage? {
+        let asset = AVURLAsset(url: URL(string: moviePath)!)
+        let generator = AVAssetImageGenerator(asset: asset)
+        generator.appliesPreferredTrackTransform = true
+        let timestamp = CMTime(seconds: 2, preferredTimescale: 60)
+        if let imageRef = try? generator.copyCGImage(at: timestamp, actualTime: nil) {
+            return UIImage(cgImage: imageRef)
+        } else {
+            return nil
+        }
+    }
+    
+    // MARK: - Fetching data from Core Data
+    
+    func loadData() {
+        guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else {
+                return
+        }
+        let managedContext =
+            appDelegate.persistentContainer.viewContext
+        let fetchRequest =
+            NSFetchRequest<NSManagedObject>(entityName: "Konten")
+        
+        
+        do {
+            dataKonten = try managedContext.fetch(fetchRequest)
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
     }
 
 }
@@ -105,13 +130,17 @@ extension IdekuCVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
             
             cell.lockedUnlockedLabel.text = "Terbuka"
             cell.titleLabel.text = "My First Vlog"
-            cell.thumbnailPicture.image = #imageLiteral(resourceName: "testerThumbnail")
+            let fetchedData = dataKonten[indexPath.row]
+            let theURL = fetchedData.value(forKey: "savedVideo") as? String
+            cell.thumbnailPicture.image = videoPreviewUIImage(moviePath: theURL!)
             
             return cell
         } else {
             cell.lockedUnlockedLabel.text = "Terbuka"
             cell.titleLabel.text = dataKonten[indexPath.row].value(forKey: "judul") as? String
-            cell.thumbnailPicture.image = #imageLiteral(resourceName: "DSC_0093")
+//            let fetchedData = dataKonten[indexPath.row]
+//            let theURL = fetchedData.value(forKey: "savedVideo") as? String
+//            cell.thumbnailPicture.image = videoPreviewUIImage(moviePath: theURL!)
             return cell
         }
         
@@ -123,6 +152,8 @@ extension IdekuCVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
         performSegue(withIdentifier: "lockedContentSegue", sender: self)
     }
     
+    
+    }
     /*
      // Uncomment this method to specify if the specified item should be highlighted during tracking
      override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
@@ -158,4 +189,3 @@ extension IdekuCVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
 //        
 //        return CGSize(width: 375, height: 455)
 //    }
-}
