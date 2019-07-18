@@ -121,6 +121,14 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="boomingFactorLabel" destination="hgs-ZC-cxA" id="hQZ-jE-TXA"/>
+                <outlet property="collabWithLabel" destination="EXr-WE-qu5" id="I3q-RP-YmD"/>
+                <outlet property="judulLabel" destination="ooa-iy-4Us" id="Zlt-ba-f50"/>
+                <outlet property="onePhraseLabel" destination="5Eb-79-b3z" id="LxC-Ld-heV"/>
+                <outlet property="settingsLabel" destination="lLa-ie-EIM" id="yYY-WC-YJb"/>
+                <outlet property="uniqueLabel" destination="34T-HX-zre" id="60S-Ye-zHn"/>
+            </connections>
         </tableViewCell>
     </objects>
     <resources>

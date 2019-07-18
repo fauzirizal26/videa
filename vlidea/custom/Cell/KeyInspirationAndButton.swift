@@ -12,6 +12,13 @@ class KeyInspirationAndButton: UITableViewCell {
     
     
     // outlets
+    @IBOutlet weak var judulLabel: UILabel!
+    @IBOutlet weak var onePhraseLabel: UILabel!
+    @IBOutlet weak var collabWithLabel: UILabel!
+    @IBOutlet weak var settingsLabel: UILabel!
+    @IBOutlet weak var uniqueLabel: UILabel!
+    @IBOutlet weak var boomingFactorLabel: UILabel!
+    
     
     
 

@@ -11,18 +11,22 @@ import UIKit
 class UnlockedContentVC: UIViewController {
     
     //outlets
-    @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var isiContentTableView: UITableView!
+    
+    var judul = ""
+    var onePhrase = ""
+    var collabWith = ""
+    var settings = ""
+    var unique = ""
+    var booming = ""
+    var savedVideoURL = ""
+    var savedThumbnail: UIImage = UIImage()
+    
     
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // navBar configuration
-        navBar.isTranslucent = false
-        navBar.setBackgroundImage(#imageLiteral(resourceName: "navBar"), for: .default)
-        navBar.shadowImage = UIImage()
         
         // register custom table view
         isiContentTableView.register(UINib(nibName: "HeaderAndThumbnailCell", bundle: nil), forCellReuseIdentifier: "HeaderAndThumbnailCellID")
@@ -52,12 +56,21 @@ extension UnlockedContentVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = isiContentTableView.dequeueReusableCell(withIdentifier: "HeaderAndThumbnailCellID", for: indexPath) as! HeaderAndThumbnailCell
+            cell.lockedUnlockedLabel.text = "Telah Terbuka"
+            cell.thumbnailPicture.image = savedThumbnail
+            cell.titleLabel.text = judul
             return cell
         } else if indexPath.row == 1 {
             let cell = isiContentTableView.dequeueReusableCell(withIdentifier: "storylineCellID", for: indexPath) as! StorylineCell
             return cell
         } else {
             let cell = isiContentTableView.dequeueReusableCell(withIdentifier: "keyInspirationAndButtonCellID", for: indexPath) as! KeyInspirationAndButton
+            cell.judulLabel.text = judul
+            cell.onePhraseLabel.text = onePhrase
+            cell.collabWithLabel.text = collabWith
+            cell.settingsLabel.text = settings
+            cell.uniqueLabel.text = unique
+            cell.boomingFactorLabel.text = booming
             return cell
         }
     }

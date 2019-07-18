@@ -10,9 +10,6 @@ import UIKit
 import AVFoundation
 import AVKit
 
-protocol CameraVCDelegate: class {
-    func popToFirstVC()
-}
 
 class CameraVC: UIViewController, AVCaptureFileOutputRecordingDelegate {
     
@@ -26,6 +23,7 @@ class CameraVC: UIViewController, AVCaptureFileOutputRecordingDelegate {
     @IBOutlet weak var settingsLabel: UILabel!
     @IBOutlet weak var uniqueLabel: UILabel!
     @IBOutlet weak var boomingLabel: UILabel!
+    @IBOutlet weak var timerLabel: UILabel!
     
     // saved text from brainstorm vc
     var judul = ""
@@ -36,7 +34,10 @@ class CameraVC: UIViewController, AVCaptureFileOutputRecordingDelegate {
     var booming = ""
     var savedVideoURL = ""
     
-    weak var delegate: CameraVCDelegate?
+    // Variables for timer
+    var timer:Timer?
+    var milliseconds:Float = 60*1000
+    
     
     // variables for camera
     let captureSession = AVCaptureSession()
@@ -91,7 +92,22 @@ class CameraVC: UIViewController, AVCaptureFileOutputRecordingDelegate {
         //navigationController?.navigationBar.isHidden = true
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+    }
     
+    // func untuk timer
+    
+    @objc func timerElapsed() {
+        milliseconds -= 1
+        
+        // convert to seconds
+        let seconds = String(format: "%.f", milliseconds/1000)
+        
+        // Set Label
+        timerLabel.text = "\(seconds)"
+    }
     // MARK: - Camera settings
     func setupCaptureSession() {
         captureSession.sessionPreset = AVCaptureSession.Preset.high
@@ -143,6 +159,9 @@ class CameraVC: UIViewController, AVCaptureFileOutputRecordingDelegate {
             isRecording = true
             
             let oneMinuteTimer = Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(doneTakingVideo), userInfo: nil, repeats: false)
+            
+            //timer
+            timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(timerElapsed), userInfo: nil, repeats: true)
             
             UIView.animate(withDuration: 0.5, delay: 0.0, options: [.repeat, .autoreverse, .allowUserInteraction], animations: { () -> Void in
                 self.recordButton.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
@@ -255,9 +274,19 @@ class CameraVC: UIViewController, AVCaptureFileOutputRecordingDelegate {
     // MARK: - Navigations
     
     @IBAction func exitButton(_ sender: UIButton) {
-        self.dismiss(animated: false) {
-            self.delegate?.popToFirstVC()
+        
+        let alert = UIAlertController(title: "Yakin mau keluar?", message: "Kalau kamu keluar, semua progress tidak akan tersimpan", preferredStyle: .alert)
+        
+        let keluar = UIAlertAction(title: "Keluar", style: .default) { (keluar) in
+            self.resetVC()
         }
+        let batal = UIAlertAction(title: "Batal", style: .cancel, handler: nil)
+        
+        alert.addAction(batal)
+        alert.addAction(keluar)
+        
+        present(alert, animated: true, completion: nil)
+        
     }
     
     
@@ -274,4 +303,7 @@ class CameraVC: UIViewController, AVCaptureFileOutputRecordingDelegate {
         }
     }
     
+    func resetVC() {
+        UIApplication.shared.windows[0].rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+    }
 }
