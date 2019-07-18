@@ -19,7 +19,6 @@ class BrainstormVC: UIViewController {
     @IBOutlet weak var boomingFactorsLabel: UILabel!
     @IBOutlet weak var keyInspirationLabel: UILabel!
     @IBOutlet weak var kontenSV: UIStackView!
-    @IBOutlet weak var navBar: UINavigationBar!
     
     
 
@@ -27,7 +26,6 @@ class BrainstormVC: UIViewController {
     @IBOutlet weak var lanjutOutlet: UIButton!
     @IBOutlet weak var textOnePopped: UILabel!
     @IBOutlet weak var textTwoPopped: UILabel!
-    @IBOutlet weak var backToBikinIdeOutlet: UIBarButtonItem!
     @IBOutlet weak var inspirasiLainOutlet: UIButton!
     
     
@@ -67,16 +65,12 @@ class BrainstormVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        navBar.setBackgroundImage(UIImage(named: "navBar"), for: .default)
-        navBar.isTranslucent = false
-        navBar.shadowImage = UIImage()
+        navigationController?.navigationBar.setChevronBackOnly()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        backToBikinIdeOutlet.isEnabled = true
-        navBar.isHidden = false
     }
     
     
@@ -122,7 +116,6 @@ class BrainstormVC: UIViewController {
     // MARK: - ANIMATION STUFF
     func animationOne() {
         UIView.animate(withDuration: 1.5) {
-            self.backToBikinIdeOutlet.isEnabled = false
             self.inspirasiLainOutlet.frame.origin.y = 1000
             self.lanjutOutlet.frame.origin.y = 1000
             self.keyInspirationLabel.frame.origin.x = -500

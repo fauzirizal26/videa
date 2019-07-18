@@ -11,6 +11,9 @@ import UIKit
 
 extension UINavigationBar {
     
-    func setBackGroundNavigation() {
+    func setChevronBackOnly() {
+        self.backIndicatorImage = UIImage(named: "Chevron")
+        self.backItem?.title
+    
     }
 }

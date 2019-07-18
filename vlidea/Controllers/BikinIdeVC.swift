@@ -33,8 +33,6 @@ class BikinIdeVC: UIViewController, UITextFieldDelegate, UIGestureRecognizerDele
         
         
         // navBar configuration
-        navBar.isTranslucent = false
-        navBar.shadowImage = UIImage()
     }
     
     
