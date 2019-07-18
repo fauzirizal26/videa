@@ -27,6 +27,12 @@ class SetLockedTimerVC: UIViewController{
     var booming = ""
     var savedVideoURL = ""
     
+    // Time related variables
+    var currentPickedDay = 0
+    var currentPickedHour = 1
+    let date = Date()
+    
+    
 
     
     // MARK: - Core Data
@@ -50,7 +56,8 @@ class SetLockedTimerVC: UIViewController{
         // set as delegate and data source
         
         // start picker view from day one
-        dayNumPicker.selectRow(1, inComponent: 0, animated: true)
+        dayNumPicker.selectRow(0, inComponent: 0, animated: true)
+        print("picked day: \(currentPickedDay), picked hour: \(currentPickedHour)")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -64,7 +71,7 @@ class SetLockedTimerVC: UIViewController{
         
         let keluar = UIAlertAction(title: "Keluar", style: .default) { (keluar) in
             
-            self.performSegue(withIdentifier: "goBackHomeToIdeku", sender: self)
+            self.resetVC()
         }
         let batal = UIAlertAction(title: "Batal", style: .cancel, handler: nil)
         
@@ -85,14 +92,27 @@ class SetLockedTimerVC: UIViewController{
         simpanData.uniqueFactor = unique
         simpanData.boomingFactor = booming
         simpanData.savedVideo = savedVideoURL
-
+        if currentPickedDay == 0 {
+            simpanData.dateCreatedContent = Calendar.current.date(byAdding: .hour, value: currentPickedHour, to: date)
+        } else {
+            simpanData.dateCreatedContent = Calendar.current.date(byAdding: .day, value: currentPickedDay, to: date)
+        }
         dataKonten.append(simpanData)
+        
         saveData()
         
         self.performSegue(withIdentifier: "goBackHomeToIdeku", sender: self)
     }
  
-
+    func resetVC() {
+        UIApplication.shared.windows[0].rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+    }
+    
+    
+    @IBAction func cekWaktu(_ sender: UIButton) {
+        
+    }
+    
 }
 
 
@@ -137,13 +157,23 @@ extension SetLockedTimerVC: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        if pickerView == dayNumPicker {
-            if row > 0 {
-                hourNumPicker.isHidden = true
-                hourStringPicker.isHidden = true
+        if pickerView == dayNumPicker || pickerView == hourNumPicker {
+            if pickerView == dayNumPicker {
+                if row > 0 {
+                    hourNumPicker.isHidden = true
+                    hourStringPicker.isHidden = true
+                    currentPickedDay = Int(datePickerData.numberOfDaysArray[row])!
+                    currentPickedHour = 0
+                } else {
+                    hourNumPicker.isHidden = false
+                    hourStringPicker.isHidden = false
+                    currentPickedDay = Int(datePickerData.numberOfDaysArray[row])!
+                    currentPickedHour = Int(datePickerData.numberOfHourArray[row])!
+                }
+                print("day picked: \(currentPickedDay), hour picked: \(currentPickedHour)")
             } else {
-                hourNumPicker.isHidden = false
-                hourStringPicker.isHidden = false
+                currentPickedHour = Int(datePickerData.numberOfHourArray[row])!
+                print("day picked: \(currentPickedDay), hour picked: \(currentPickedHour)")
             }
         }
     }

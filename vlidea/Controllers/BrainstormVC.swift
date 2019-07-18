@@ -8,9 +8,6 @@
 
 import UIKit
 
-protocol BrainstormVCDelegate: class {
-    func dismissMe()
-}
 
 class BrainstormVC: UIViewController {
     
@@ -25,8 +22,6 @@ class BrainstormVC: UIViewController {
     @IBOutlet weak var kontenSV: UIStackView!
     @IBOutlet weak var buttonSV: UIStackView!
     
-    
-    weak var delegate: BrainstormVCDelegate?
 
     // outlets button animated
     @IBOutlet weak var lanjutOutlet: UIButton!
@@ -81,11 +76,6 @@ class BrainstormVC: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        if isFromCameraVC {
-            self.delegate?.dismissMe()
-        } else {
-            // do nothing
-        }
 
         self.view.layer.removeAllAnimations()
         // hidden texts
@@ -185,15 +175,9 @@ class BrainstormVC: UIViewController {
         goToBrainstormVC.settings = settingsLabel.text!
         goToBrainstormVC.unique = uniqueFactorsLabel.text!
         goToBrainstormVC.booming = boomingFactorsLabel.text!
-        goToBrainstormVC.delegate = self
     }
 
 }
 
-extension BrainstormVC: CameraVCDelegate {
-    func popToFirstVC() {
-        isFromCameraVC = true
-        self.navigationController?.popToRootViewController(animated: false)
-    }
-}
+
 

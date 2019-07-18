@@ -11,6 +11,9 @@ import UIKit
 class HeaderAndThumbnailCell: UITableViewCell {
     
     // outlets
+    @IBOutlet weak var lockedUnlockedLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var thumbnailPicture: UIImageView!
     
 
     override func awakeFromNib() {

@@ -34,6 +34,11 @@ class FinishedTakingVideoVC: UIViewController {
         
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+    }
+    
     @IBAction func cancelButton(_ sender: UIButton) {
         let alert = UIAlertController(title: "Yakin mau ulang?", message: "Video mu tadi akan hilang", preferredStyle: .alert)
         
@@ -71,5 +76,5 @@ class FinishedTakingVideoVC: UIViewController {
             nextVC.savedVideoURL = savedVideoURL
         }
     }
-
+   
 }

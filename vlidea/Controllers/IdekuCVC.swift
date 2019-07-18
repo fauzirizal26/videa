@@ -20,9 +20,21 @@ class IdekuCVC: UIViewController {
     @IBOutlet weak var collectionContent: UICollectionView!
     
     // variables
-    let backgroundImageController = UIImage(named: "navBar")
     var dataKonten: [NSManagedObject] = []
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    // time related variables
+    let currentDay = Date()
+    
+    // didSelect container variables
+    var judul = ""
+    var onePhrase = ""
+    var collabWith = ""
+    var settings = ""
+    var unique = ""
+    var booming = ""
+    var savedVideoURL = ""
+    var savedThumbnail: UIImage = UIImage() 
 
   
     // MARK: - View
@@ -52,7 +64,6 @@ class IdekuCVC: UIViewController {
         
         // collection view
         dataKonten.reverse()
-        collectionContent.reloadData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -68,9 +79,11 @@ class IdekuCVC: UIViewController {
         // Register cell classes
         collectionContent.register(UINib(nibName: "ContentCollectionCell", bundle: nil), forCellWithReuseIdentifier: "contentCellID")
         
+        collectionContent.reloadData()
+        
     }
     
-    // MARK: - Thumbnail
+    // MARK: - Thumbnail Video
     func videoPreviewUIImage(moviePath: String) -> UIImage? {
         let asset = AVURLAsset(url: URL(string: moviePath)!)
         let generator = AVAssetImageGenerator(asset: asset)
@@ -102,6 +115,30 @@ class IdekuCVC: UIViewController {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
     }
+    
+    // MARK: - Navigations
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "lockedContentSegue" {
+            let nextVC = segue.destination as! LockedContentVC
+            nextVC.judul = judul
+            nextVC.onePhrase = onePhrase
+            nextVC.collabWith = collabWith
+            nextVC.settings = settings
+            nextVC.unique = unique
+            nextVC.booming = booming
+            nextVC.savedThumbnail = savedThumbnail
+        } else if segue.identifier == "unlockedContentSegue" {
+            let nextVC = segue.destination as! UnlockedContentVC
+            nextVC.judul = judul
+            nextVC.onePhrase = onePhrase
+            nextVC.collabWith = collabWith
+            nextVC.settings = settings
+            nextVC.unique = unique
+            nextVC.booming = booming
+            nextVC.savedThumbnail = savedThumbnail
+        }
+    }
 
 }
 
@@ -130,18 +167,27 @@ extension IdekuCVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
             
             cell.lockedUnlockedLabel.text = "Terbuka"
             cell.titleLabel.text = "My First Vlog"
-            let fetchedData = dataKonten[indexPath.row]
-            let theURL = fetchedData.value(forKey: "savedVideo") as? String
-            cell.thumbnailPicture.image = videoPreviewUIImage(moviePath: theURL!)
+            cell.thumbnailPicture.image = #imageLiteral(resourceName: "testerThumbnail")
             
             return cell
         } else {
-            cell.lockedUnlockedLabel.text = "Terbuka"
-            cell.titleLabel.text = dataKonten[indexPath.row].value(forKey: "judul") as? String
-//            let fetchedData = dataKonten[indexPath.row]
-//            let theURL = fetchedData.value(forKey: "savedVideo") as? String
-//            cell.thumbnailPicture.image = videoPreviewUIImage(moviePath: theURL!)
-            return cell
+            if currentDay >= dataKonten[indexPath.row].value(forKey: "dateCreatedContent") as! Date {
+                cell.lockedUnlockedLabel.text = "Terbuka"
+                cell.titleLabel.text = dataKonten[indexPath.row].value(forKey: "judul") as? String
+                let fetchedData = dataKonten[indexPath.row]
+                let theURL = fetchedData.value(forKey: "savedVideo") as? String
+                cell.thumbnailPicture.image = videoPreviewUIImage(moviePath: theURL!)
+
+                return cell
+            } else {
+                cell.lockedUnlockedLabel.text = "Tertutup"
+                cell.titleLabel.text = dataKonten[indexPath.row].value(forKey: "judul") as? String
+                let fetchedData = dataKonten[indexPath.row]
+                let theURL = fetchedData.value(forKey: "savedVideo") as? String
+                cell.thumbnailPicture.image = videoPreviewUIImage(moviePath: theURL!)
+                savedThumbnail = videoPreviewUIImage(moviePath: theURL!)!
+                return cell
+            }
         }
         
     }
@@ -149,7 +195,41 @@ extension IdekuCVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
     // MARK: UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "lockedContentSegue", sender: self)
+        
+        if indexPath.row == dataKonten.count {
+            performSegue(withIdentifier: "goToTutorialSegue", sender: self)
+        } else {
+            if currentDay >= dataKonten[indexPath.row].value(forKey: "dateCreatedContent") as! Date {
+                judul = dataKonten[indexPath.row].value(forKey: "judul") as! String
+                onePhrase = dataKonten[indexPath.row].value(forKey: "onePhrase") as! String
+                collabWith = dataKonten[indexPath.row].value(forKey: "collabWith") as! String
+                settings = dataKonten[indexPath.row].value(forKey: "setting") as! String
+                unique = dataKonten[indexPath.row].value(forKey: "uniqueFactor") as! String
+                booming = dataKonten[indexPath.row].value(forKey: "boomingFactor") as! String
+                savedVideoURL = dataKonten[indexPath.row].value(forKey: "savedVideo") as! String
+                
+                let fetchedData = dataKonten[indexPath.row]
+                let theURL = fetchedData.value(forKey: "savedVideo") as? String
+                savedThumbnail = videoPreviewUIImage(moviePath: theURL!)!
+                
+                performSegue(withIdentifier: "unlockedContentSegue", sender: self)
+            } else {
+                judul = dataKonten[indexPath.row].value(forKey: "judul") as! String
+                onePhrase = dataKonten[indexPath.row].value(forKey: "onePhrase") as! String
+                collabWith = dataKonten[indexPath.row].value(forKey: "collabWith") as! String
+                settings = dataKonten[indexPath.row].value(forKey: "setting") as! String
+                unique = dataKonten[indexPath.row].value(forKey: "uniqueFactor") as! String
+                booming = dataKonten[indexPath.row].value(forKey: "boomingFactor") as! String
+                savedVideoURL = dataKonten[indexPath.row].value(forKey: "savedVideo") as! String
+                
+                let fetchedData = dataKonten[indexPath.row]
+                let theURL = fetchedData.value(forKey: "savedVideo") as? String
+                savedThumbnail = videoPreviewUIImage(moviePath: theURL!)!
+                
+                performSegue(withIdentifier: "lockedContentSegue", sender: self)
+            }
+        }
+
     }
     
     

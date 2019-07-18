@@ -66,7 +66,6 @@ class BikinIdeVC: UIViewController, UITextFieldDelegate, UIGestureRecognizerDele
         let nextVC = segue.destination as! BrainstormVC
         nextVC.judulBaru = ideTextField.text!
         nextVC.navigationItem.hidesBackButton = true
-        nextVC.delegate = self
     }
     
     
@@ -83,8 +82,4 @@ class BikinIdeVC: UIViewController, UITextFieldDelegate, UIGestureRecognizerDele
     
 }
 
-extension BikinIdeVC: BrainstormVCDelegate {
-    func dismissMe() {
-        self.dismiss(animated: true, completion: nil)
-    }
-}
+

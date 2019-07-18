@@ -21,7 +21,8 @@
 		D062BCEE22D36F6500A3F376 /* LabelDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = D062BCED22D36F6500A3F376 /* LabelDesign.swift */; };
 		D062BCF022D48B6200A3F376 /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D062BCEF22D48B6200A3F376 /* CameraVC.swift */; };
 		D062BCF222D48DDA00A3F376 /* IdekuCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D062BCF122D48DDA00A3F376 /* IdekuCVC.swift */; };
-		D0CEA62722D738680058FB3E /* lockedContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CEA62622D738680058FB3E /* lockedContentVC.swift */; };
+		D09797B422E0752000C639E5 /* TutorialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09797B322E0752000C639E5 /* TutorialVC.swift */; };
+		D0CEA62722D738680058FB3E /* LockedContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CEA62622D738680058FB3E /* LockedContentVC.swift */; };
 		D0CEA62922D8789E0058FB3E /* FinishedTakingVideoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CEA62822D8789E0058FB3E /* FinishedTakingVideoVC.swift */; };
 		D0EA2BD822D9D079005AA427 /* DataInspirasiClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EA2BD722D9D079005AA427 /* DataInspirasiClass.swift */; };
 		D0EA2BDA22D9E736005AA427 /* navigationCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EA2BD922D9E736005AA427 /* navigationCustom.swift */; };
@@ -54,7 +55,8 @@
 		D062BCED22D36F6500A3F376 /* LabelDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelDesign.swift; sourceTree = "<group>"; };
 		D062BCEF22D48B6200A3F376 /* CameraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraVC.swift; sourceTree = "<group>"; };
 		D062BCF122D48DDA00A3F376 /* IdekuCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdekuCVC.swift; sourceTree = "<group>"; };
-		D0CEA62622D738680058FB3E /* lockedContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lockedContentVC.swift; sourceTree = "<group>"; };
+		D09797B322E0752000C639E5 /* TutorialVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialVC.swift; sourceTree = "<group>"; };
+		D0CEA62622D738680058FB3E /* LockedContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockedContentVC.swift; sourceTree = "<group>"; };
 		D0CEA62822D8789E0058FB3E /* FinishedTakingVideoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedTakingVideoVC.swift; sourceTree = "<group>"; };
 		D0EA2BD722D9D079005AA427 /* DataInspirasiClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataInspirasiClass.swift; sourceTree = "<group>"; };
 		D0EA2BD922D9E736005AA427 /* navigationCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = navigationCustom.swift; sourceTree = "<group>"; };
@@ -119,9 +121,10 @@
 				D062BCEF22D48B6200A3F376 /* CameraVC.swift */,
 				D0CEA62822D8789E0058FB3E /* FinishedTakingVideoVC.swift */,
 				D01D1EE622D8F931006776D9 /* SetLockedTimerVC.swift */,
-				D0CEA62622D738680058FB3E /* lockedContentVC.swift */,
+				D0CEA62622D738680058FB3E /* LockedContentVC.swift */,
 				D0EA2BDD22DB5036005AA427 /* UnlockedContentVC.swift */,
 				5D91F95722DDDFA7009315F0 /* BukaKunciVC.swift */,
+				D09797B322E0752000C639E5 /* TutorialVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 				D01D1EE722D8F931006776D9 /* SetLockedTimerVC.swift in Sources */,
 				D062BCC822D328C400A3F376 /* AppDelegate.swift in Sources */,
 				D0EA2BEA22DB5ACC005AA427 /* KeyInspirationAndButton.swift in Sources */,
+				D09797B422E0752000C639E5 /* TutorialVC.swift in Sources */,
 				D0EA2BD822D9D079005AA427 /* DataInspirasiClass.swift in Sources */,
 				5D91F95822DDDFA7009315F0 /* BukaKunciVC.swift in Sources */,
 				D062BCE322D3340500A3F376 /* BikinIdeVC.swift in Sources */,
@@ -275,7 +279,7 @@
 				D062BCEE22D36F6500A3F376 /* LabelDesign.swift in Sources */,
 				D0EA2BDC22D9F155005AA427 /* DatePickerModel.swift in Sources */,
 				D062BCEA22D33E3800A3F376 /* BrainstormVC.swift in Sources */,
-				D0CEA62722D738680058FB3E /* lockedContentVC.swift in Sources */,
+				D0CEA62722D738680058FB3E /* LockedContentVC.swift in Sources */,
 				D0EA2BE622DB576E005AA427 /* StorylineCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,7 +427,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YWH3G4KM8X;
+				DEVELOPMENT_TEAM = LQZ82U4W9U;
 				INFOPLIST_FILE = "$(SRCROOT)/vlidea/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -441,7 +445,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YWH3G4KM8X;
+				DEVELOPMENT_TEAM = LQZ82U4W9U;
 				INFOPLIST_FILE = "$(SRCROOT)/vlidea/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -20,6 +20,14 @@ extension UIViewController {
         let plusBarButton = UIBarButtonItem(customView: plusButtonView)
         self.navigationItem.rightBarButtonItem = plusBarButton
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "navBar"), for: .default)
+        
+        
+        let logo = UIImage(named: "Vide")
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 30, height: 20))
+        imageView.image = logo
+        imageView.contentMode = .scaleAspectFit
+        self.navigationItem.titleView = imageView
+        self.navigationController?.navigationBar.isTranslucent = false
     }
     
     func closeButtonKanan() {
