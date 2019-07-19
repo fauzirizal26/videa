@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="pertanyaanCellID" rowHeight="938" id="KGk-i7-Jjw" customClass="PertanyaanCell" customModule="vlidea" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="900"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="899.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gimana idemu tentang pembukaan dan penutupan vlog yang bakal dibuat?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5BP-uT-bnX">
+                        <rect key="frame" x="15" y="15" width="384" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="vwl-CC-1ng"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ATR-Fd-uTX">
+                        <rect key="frame" x="15" y="80" width="384" height="150"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="150" id="fcV-0p-RWd"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        <connections>
+                            <outlet property="delegate" destination="KGk-i7-Jjw" id="bgK-nc-Gd1"/>
+                        </connections>
+                    </textView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kalau tentang klimaks atau puncak cerita. Apa yang sekarang terbayang?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sRq-jy-IZW">
+                        <rect key="frame" x="15" y="245" width="384" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="2I6-rv-BVa"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="EQd-qO-016">
+                        <rect key="frame" x="15" y="310" width="384" height="150"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="150" id="wxh-qe-qds"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        <connections>
+                            <outlet property="delegate" destination="KGk-i7-Jjw" id="EdM-Lw-Yem"/>
+                        </connections>
+                    </textView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bagaimana idemu tentang alur cerita atau plot dari vlogmu?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PO0-cs-fXk">
+                        <rect key="frame" x="15" y="475" width="384" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="MKZ-BF-ibU"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cpr-eV-DWt">
+                        <rect key="frame" x="15" y="540" width="384" height="150"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="150" id="5xp-iY-0E0"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        <connections>
+                            <outlet property="delegate" destination="KGk-i7-Jjw" id="LZ8-l3-qO5"/>
+                        </connections>
+                    </textView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXU-U8-Atw">
+                        <rect key="frame" x="15" y="720" width="384" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="y0E-Xk-8Lw"/>
+                        </constraints>
+                        <state key="normal" image="selesai"/>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="PO0-cs-fXk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="170-u1-pL2"/>
+                    <constraint firstAttribute="trailing" secondItem="cXU-U8-Atw" secondAttribute="trailing" constant="15" id="1TE-rK-cz8"/>
+                    <constraint firstItem="5BP-uT-bnX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="2WY-zr-cuM"/>
+                    <constraint firstItem="cpr-eV-DWt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="34H-Zs-pdL"/>
+                    <constraint firstAttribute="trailing" secondItem="ATR-Fd-uTX" secondAttribute="trailing" constant="15" id="3aK-TY-9vz"/>
+                    <constraint firstItem="sRq-jy-IZW" firstAttribute="top" secondItem="ATR-Fd-uTX" secondAttribute="bottom" constant="15" id="5VW-8I-NnS"/>
+                    <constraint firstItem="EQd-qO-016" firstAttribute="top" secondItem="sRq-jy-IZW" secondAttribute="bottom" constant="15" id="6KT-Ly-Wdh"/>
+                    <constraint firstItem="ATR-Fd-uTX" firstAttribute="top" secondItem="5BP-uT-bnX" secondAttribute="bottom" constant="15" id="87L-El-l1B"/>
+                    <constraint firstAttribute="trailing" secondItem="cpr-eV-DWt" secondAttribute="trailing" constant="15" id="CiI-ey-B40"/>
+                    <constraint firstItem="cpr-eV-DWt" firstAttribute="top" secondItem="PO0-cs-fXk" secondAttribute="bottom" constant="15" id="J8b-K4-5rg"/>
+                    <constraint firstAttribute="trailing" secondItem="PO0-cs-fXk" secondAttribute="trailing" constant="15" id="RAu-r5-FRi"/>
+                    <constraint firstItem="PO0-cs-fXk" firstAttribute="top" secondItem="EQd-qO-016" secondAttribute="bottom" constant="15" id="RDr-4B-c7r"/>
+                    <constraint firstAttribute="trailing" secondItem="sRq-jy-IZW" secondAttribute="trailing" constant="15" id="T1N-am-uLW"/>
+                    <constraint firstItem="sRq-jy-IZW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="UcM-cV-gKG"/>
+                    <constraint firstItem="cXU-U8-Atw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="ZoM-Cn-pLc"/>
+                    <constraint firstItem="5BP-uT-bnX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="cEQ-Pc-kZo"/>
+                    <constraint firstItem="EQd-qO-016" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="dTS-dj-2Hl"/>
+                    <constraint firstAttribute="trailing" secondItem="EQd-qO-016" secondAttribute="trailing" constant="15" id="eNR-1E-kmi"/>
+                    <constraint firstItem="cXU-U8-Atw" firstAttribute="top" secondItem="cpr-eV-DWt" secondAttribute="bottom" constant="30" id="eQG-eJ-zjg"/>
+                    <constraint firstItem="ATR-Fd-uTX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="jTx-3D-DT9"/>
+                    <constraint firstAttribute="trailing" secondItem="5BP-uT-bnX" secondAttribute="trailing" constant="15" id="utp-wR-cDb"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="alurCeritaTextView" destination="cpr-eV-DWt" id="j1J-fL-WXC"/>
+                <outlet property="klimaksTextView" destination="EQd-qO-016" id="lA3-zp-S1Y"/>
+                <outlet property="pembukaanDanPenutupanTextView" destination="ATR-Fd-uTX" id="vZq-lX-Die"/>
+                <outlet property="selesaiButton" destination="cXU-U8-Atw" id="fyz-0q-wd3"/>
+            </connections>
+            <point key="canvasLocation" x="138.40579710144928" y="275.22321428571428"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="selesai" width="362" height="41"/>
+    </resources>
+</document>

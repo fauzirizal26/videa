@@ -10,11 +10,16 @@ import Foundation
 
 
 class DataInspirasiClass {
+    let onePhraseArray = [["Reaksi", "Prank", "Truth or Drink", "Ulasan Jujur", "Challenge"], ["Mukbang", "Pengalaman paranormal", "Cover Lagu", "Gaming", "Sharing Pengalaman", "Tutorial", "Unboxing", "Gaming", "Cerita Sukses"], ["Gerebek", "Komedi", "Edukasi", "Fakta Unik", "Ekperimen", "Berapa Harga Outfit Lo"]]
     
-    let onePhraseArray = [["Reaction", "Prank", "Truth or drink"],["Mukbang", "Honest review", "Challenge"],["Explore", "Comedy", "Education"]]
-    let collabWithArray = ["Friends", "Parents", "Neighbor", "Boss", "CelebGram", "Musician", "Athlete", "Student", "Gojek Driver", "Girlfriend", "Crush", "ex"]
-    let settingsArray = [["Workplace", "Hospital", "School", "Airport"], ["Home", "Apartment", "Kos-kosan", "Hotel"], ["restaurant", "Cafe", "Mall", "Park"]]
-    let uniqueFactorArray = ["Talkative", "Funny", "Annoying"]
-    let boomingFactorArray = ["Controveresial", "Crazy Thumbnail", "Winning Prize", "Punishment for the losers", "Crazy Title", "Offensive"]
+    let collabWithArray = ["Teman", "Orang Tua", "Tentangga", "Atasan", "SelebGram", "Musisi", "Satpam", "Supir Ojek", "Pacar", "Gebetan", "Mantan", "Atasan Pekerja", "Manager", "Milyarder", "Musisi Ternama", "Presiden"]
     
+    
+    let settingsArray = [["Bandara", "Coffee Shop", "Kampus", "Pantai", "Club"], ["Rumah", "Apartment", "Kosan", "Hotel", "Kantor", "Sekolah", "Kantor", "Ruang Meeting"], ["Restoran", "Cafe", "Mall", "Tempat Umum", "Trotoar", "Rest Area"]]
+    
+    let uniqueFactorArray = ["Ceplas - Ceplos", "Lucu", "Menjengkelkan", "Kalem", "Kocak", "Gila-gilaan"]
+    
+    
+    let boomingFactorArray = ["Kontroversial", "Thumbnail Menarik", "Memenangkan Hadiah", "Judul yang Mencengangkan", "Ekstrim", "Menyinggung Seseorang"]
+
 }

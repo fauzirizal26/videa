@@ -22,9 +22,11 @@ class IdekuCVC: UIViewController {
     // variables
     var dataKonten: [NSManagedObject] = []
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var refreshControl = UIRefreshControl()
     
     // time related variables
-    let currentDay = Date()
+    var currentTime = Date()
+    
     
     // didSelect container variables
     var judul = ""
@@ -34,7 +36,7 @@ class IdekuCVC: UIViewController {
     var unique = ""
     var booming = ""
     var savedVideoURL = ""
-    var savedThumbnail: UIImage = UIImage() 
+    var savedThumbnail: UIImage = UIImage()
 
   
     // MARK: - View
@@ -73,14 +75,26 @@ class IdekuCVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
         // Register cell classes
         collectionContent.register(UINib(nibName: "ContentCollectionCell", bundle: nil), forCellWithReuseIdentifier: "contentCellID")
         
-        collectionContent.reloadData()
         
+        
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self, action: #selector(refresh), for: UIControl.Event.valueChanged)
+        collectionContent.addSubview(refreshControl)
+        
+        print(currentTime)
+        
+    }
+    
+    // MArk: - Refresh
+    @objc func refresh(sender:AnyObject) {
+        // Code to refresh table view
+        collectionContent.reloadData()
+        refreshControl.endRefreshing()
+        currentTime = Date()
+        print(currentTime)
     }
     
     // MARK: - Thumbnail Video
@@ -128,6 +142,7 @@ class IdekuCVC: UIViewController {
             nextVC.unique = unique
             nextVC.booming = booming
             nextVC.savedThumbnail = savedThumbnail
+            
         } else if segue.identifier == "unlockedContentSegue" {
             let nextVC = segue.destination as! UnlockedContentVC
             nextVC.judul = judul
@@ -137,6 +152,10 @@ class IdekuCVC: UIViewController {
             nextVC.unique = unique
             nextVC.booming = booming
             nextVC.savedThumbnail = savedThumbnail
+        } else if segue.identifier == "goToBikinIdeVC" {
+            let nextVC = segue.destination as! UINavigationController
+            let next2VC = nextVC.topViewController as! BikinIdeVC
+            
         }
     }
 
@@ -171,7 +190,7 @@ extension IdekuCVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
             
             return cell
         } else {
-            if currentDay >= dataKonten[indexPath.row].value(forKey: "dateCreatedContent") as! Date {
+            if currentTime >= dataKonten[indexPath.row].value(forKey: "pickedDateToLockContent") as! Date {
                 cell.lockedUnlockedLabel.text = "Terbuka"
                 cell.titleLabel.text = dataKonten[indexPath.row].value(forKey: "judul") as? String
                 let fetchedData = dataKonten[indexPath.row]
@@ -185,7 +204,6 @@ extension IdekuCVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
                 let fetchedData = dataKonten[indexPath.row]
                 let theURL = fetchedData.value(forKey: "savedVideo") as? String
                 cell.thumbnailPicture.image = videoPreviewUIImage(moviePath: theURL!)
-                savedThumbnail = videoPreviewUIImage(moviePath: theURL!)!
                 return cell
             }
         }
@@ -199,7 +217,7 @@ extension IdekuCVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
         if indexPath.row == dataKonten.count {
             performSegue(withIdentifier: "goToTutorialSegue", sender: self)
         } else {
-            if currentDay >= dataKonten[indexPath.row].value(forKey: "dateCreatedContent") as! Date {
+            if currentTime >= dataKonten[indexPath.row].value(forKey: "pickedDateToLockContent") as! Date {
                 judul = dataKonten[indexPath.row].value(forKey: "judul") as! String
                 onePhrase = dataKonten[indexPath.row].value(forKey: "onePhrase") as! String
                 collabWith = dataKonten[indexPath.row].value(forKey: "collabWith") as! String
@@ -208,10 +226,11 @@ extension IdekuCVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
                 booming = dataKonten[indexPath.row].value(forKey: "boomingFactor") as! String
                 savedVideoURL = dataKonten[indexPath.row].value(forKey: "savedVideo") as! String
                 
+                
+                
                 let fetchedData = dataKonten[indexPath.row]
                 let theURL = fetchedData.value(forKey: "savedVideo") as? String
                 savedThumbnail = videoPreviewUIImage(moviePath: theURL!)!
-                
                 performSegue(withIdentifier: "unlockedContentSegue", sender: self)
             } else {
                 judul = dataKonten[indexPath.row].value(forKey: "judul") as! String
@@ -225,6 +244,7 @@ extension IdekuCVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
                 let fetchedData = dataKonten[indexPath.row]
                 let theURL = fetchedData.value(forKey: "savedVideo") as? String
                 savedThumbnail = videoPreviewUIImage(moviePath: theURL!)!
+
                 
                 performSegue(withIdentifier: "lockedContentSegue", sender: self)
             }

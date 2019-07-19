@@ -95,6 +95,9 @@ class CameraVC: UIViewController, AVCaptureFileOutputRecordingDelegate {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
+        timer?.invalidate()
+        timerLabel.text = "Waktu anda 1 menit"
+        
     }
     
     // func untuk timer
@@ -169,8 +172,10 @@ class CameraVC: UIViewController, AVCaptureFileOutputRecordingDelegate {
                 oneMinuteTimer.fire()
             })
             
-            let outputPath = NSTemporaryDirectory() + "output\(judulLabel.text)\(onePhraseLabel.text).mov"
-            let outputFileURL = URL(fileURLWithPath: outputPath)
+            let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+            let outputFileURL = paths[0].appendingPathComponent("output\(judulLabel.text)\(onePhraseLabel.text).mov")
+//            let outputPath = NSTemporaryDirectory() + "output\(judulLabel.text)\(onePhraseLabel.text).mov"
+//            let outputFileURL = URL(fileURLWithPath: outputPath)
             videoFileOutput?.startRecording(to: outputFileURL, recordingDelegate: self)
             
             
@@ -182,6 +187,9 @@ class CameraVC: UIViewController, AVCaptureFileOutputRecordingDelegate {
             }, completion: nil)
             recordButton.layer.removeAllAnimations()
             videoFileOutput?.stopRecording()
+            
+
+            timer?.invalidate()
         }
     }
     
@@ -196,7 +204,7 @@ class CameraVC: UIViewController, AVCaptureFileOutputRecordingDelegate {
     
     func fileOutput(_ output: AVCaptureFileOutput, didFinishRecordingTo outputFileURL: URL, from connections: [AVCaptureConnection], error: Error?) {
         if error != nil {
-            print(error)
+            print(error!)
             return
         }
         
@@ -207,6 +215,7 @@ class CameraVC: UIViewController, AVCaptureFileOutputRecordingDelegate {
 //        present(controller, animated: true, completion: nil)
         
         savedVideoURL = "\(outputFileURL)"
+        print(outputFileURL)
         performSegue(withIdentifier: "videoFinishedSegue", sender: outputFileURL)
     }
     

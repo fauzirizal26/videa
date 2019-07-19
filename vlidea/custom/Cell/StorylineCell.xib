@@ -96,6 +96,11 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="alurCeritaLabel" destination="LCJ-vZ-jGt" id="1cJ-EU-UD0"/>
+                <outlet property="klimaksLabel" destination="b63-wr-SLZ" id="SRF-cB-eql"/>
+                <outlet property="pembukaanDanPenutupanLabel" destination="R1p-MJ-E3S" id="m8Y-I1-e3x"/>
+            </connections>
             <point key="canvasLocation" x="111.59420289855073" y="276.22767857142856"/>
         </tableViewCell>
     </objects>

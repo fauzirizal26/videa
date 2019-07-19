@@ -11,6 +11,9 @@ import UIKit
 class StorylineCell: UITableViewCell {
     
     // outlets
+    @IBOutlet weak var pembukaanDanPenutupanLabel: UILabel!
+    @IBOutlet weak var klimaksLabel: UILabel!
+    @IBOutlet weak var alurCeritaLabel: UILabel!
     
     
 

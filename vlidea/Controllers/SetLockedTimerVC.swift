@@ -84,6 +84,11 @@ class SetLockedTimerVC: UIViewController{
     
     
     @IBAction func kunciButton(_ sender: UIButton) {
+        // time created
+        let time = Date()
+        
+        
+        // core data saving
         let simpanData = Konten(context: self.context)
         simpanData.judul = judul
         simpanData.onePhrase = onePhrase
@@ -93,24 +98,21 @@ class SetLockedTimerVC: UIViewController{
         simpanData.boomingFactor = booming
         simpanData.savedVideo = savedVideoURL
         if currentPickedDay == 0 {
-            simpanData.dateCreatedContent = Calendar.current.date(byAdding: .hour, value: currentPickedHour, to: date)
+            simpanData.pickedDateToLockContent = Calendar.current.date(byAdding: .second, value: 5, to: date)
         } else {
-            simpanData.dateCreatedContent = Calendar.current.date(byAdding: .day, value: currentPickedDay, to: date)
+            simpanData.pickedDateToLockContent = Calendar.current.date(byAdding: .day, value: currentPickedDay, to: date)
         }
+        
+        
         dataKonten.append(simpanData)
         
         saveData()
         
-        self.performSegue(withIdentifier: "goBackHomeToIdeku", sender: self)
+        resetVC()
     }
  
     func resetVC() {
         UIApplication.shared.windows[0].rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
-    }
-    
-    
-    @IBAction func cekWaktu(_ sender: UIButton) {
-        
     }
     
 }

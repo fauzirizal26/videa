@@ -14,8 +14,6 @@ class BikinIdeVC: UIViewController, UITextFieldDelegate, UIGestureRecognizerDele
     @IBOutlet weak var ideTextField: TextFieldStyle!
     
     
-    // variables
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         

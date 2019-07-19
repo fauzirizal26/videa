@@ -63,15 +63,25 @@
                             </label>
                         </subviews>
                     </stackView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KQk-gM-drO">
+                        <rect key="frame" x="100" y="200" width="214" height="213.5"/>
+                        <state key="normal" image="playButton">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="mlY-aj-iWV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="4Er-rE-42y"/>
                     <constraint firstItem="Asn-e1-FTp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="8X9-Rk-t52"/>
                     <constraint firstAttribute="trailing" secondItem="mlY-aj-iWV" secondAttribute="trailing" constant="15" id="DBl-Vb-n0X"/>
+                    <constraint firstItem="KQk-gM-drO" firstAttribute="top" secondItem="Asn-e1-FTp" secondAttribute="bottom" constant="100" id="Doe-Us-Oal"/>
                     <constraint firstItem="DYH-Uj-gD8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="GGx-Ka-49Y"/>
                     <constraint firstAttribute="bottom" secondItem="DYH-Uj-gD8" secondAttribute="bottom" id="Shy-Me-rj6"/>
                     <constraint firstItem="mlY-aj-iWV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="XZe-ZV-p0c"/>
+                    <constraint firstAttribute="bottom" secondItem="KQk-gM-drO" secondAttribute="bottom" constant="100" id="Za6-me-7KN"/>
+                    <constraint firstItem="KQk-gM-drO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="100" id="cZq-gd-7Yp"/>
                     <constraint firstAttribute="trailing" secondItem="DYH-Uj-gD8" secondAttribute="trailing" id="oLe-WP-sUq"/>
+                    <constraint firstAttribute="trailing" secondItem="KQk-gM-drO" secondAttribute="trailing" constant="100" id="pUy-mg-oH2"/>
                     <constraint firstItem="DYH-Uj-gD8" firstAttribute="top" secondItem="mlY-aj-iWV" secondAttribute="bottom" constant="15" id="qEm-ke-Vaw"/>
                     <constraint firstItem="Asn-e1-FTp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="u1p-Zi-Klp"/>
                     <constraint firstItem="DYH-Uj-gD8" firstAttribute="top" secondItem="Asn-e1-FTp" secondAttribute="bottom" id="v9y-Ma-MFB"/>
@@ -81,6 +91,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="lockedUnlockedLabel" destination="upN-oG-aQ5" id="MhZ-7B-6QC"/>
+                <outlet property="playButtonLabel" destination="KQk-gM-drO" id="X6a-ei-IsC"/>
                 <outlet property="thumbnailPicture" destination="DYH-Uj-gD8" id="L1m-Lr-3QJ"/>
                 <outlet property="titleLabel" destination="8JN-No-YOt" id="Yaq-Yv-5L3"/>
             </connections>
@@ -90,6 +101,7 @@
     <resources>
         <image name="DSC_0093" width="3540" height="4000"/>
         <image name="Rectangle Copy " width="414" height="257"/>
+        <image name="playButton" width="119" height="119"/>
         <image name="time" width="18" height="18"/>
     </resources>
 </document>

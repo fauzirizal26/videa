@@ -18,6 +18,7 @@ class KeyInspirationAndButton: UITableViewCell {
     @IBOutlet weak var settingsLabel: UILabel!
     @IBOutlet weak var uniqueLabel: UILabel!
     @IBOutlet weak var boomingFactorLabel: UILabel!
+    @IBOutlet weak var panduanLanjutanButton: UIButton!
     
     
     
@@ -32,5 +33,4 @@ class KeyInspirationAndButton: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
 }

@@ -1,21 +1,18 @@
 //
-//  BukaKunciVC.swift
+//  PanduanLanjutanVC.swift
 //  vlidea
 //
-//  Created by Aditya Patriazka on 16/07/19.
+//  Created by Fauzi Rizal on 18/07/19.
 //  Copyright © 2019 Fauzi Rizal. All rights reserved.
 //
 
 import UIKit
 
-class BukaKunciVC: UIViewController, UITextFieldDelegate {
+class PanduanLanjutanVC: UIViewController {
 
-    @IBOutlet weak var textBuka: TextFieldStyle!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        textBuka.delegate = self
         // Do any additional setup after loading the view.
     }
     

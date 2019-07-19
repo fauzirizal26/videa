@@ -31,12 +31,15 @@ class LockedContentVC: UIViewController {
     var booming = ""
     var savedVideoURL = ""
     var savedThumbnail: UIImage = UIImage()
+    var index = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         updateUI()
+        
+        print(index)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,14 +63,20 @@ class LockedContentVC: UIViewController {
         thumbnailPicture.image = savedThumbnail
     }
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "goToBukaKunciSegue" {
+//            let nextVC = segue.destination as! BukaKunciVC
+//            nextVC.judul = judul
+//            nextVC.onePhrase = onePhrase
+//            nextVC.collabWith = collabWith
+//            nextVC.settings = settings
+//            nextVC.unique = unique
+//            nextVC.booming = booming
+//        }
+//
+//    }
 
 }

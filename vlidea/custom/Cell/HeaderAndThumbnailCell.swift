@@ -14,6 +14,7 @@ class HeaderAndThumbnailCell: UITableViewCell {
     @IBOutlet weak var lockedUnlockedLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var thumbnailPicture: UIImageView!
+    @IBOutlet weak var playButtonLabel: UIButton!
     
 
     override func awakeFromNib() {
@@ -26,5 +27,8 @@ class HeaderAndThumbnailCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    
+    
     
 }
