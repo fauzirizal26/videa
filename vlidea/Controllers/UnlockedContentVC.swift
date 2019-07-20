@@ -28,6 +28,7 @@ class UnlockedContentVC: UIViewController {
     var doneStroryboard = false
     var nillChecker = true
     var dataKonten: [Konten] = [Konten]()
+    var index = 0
     
     var alurCeritaTextView = ""
     var klimaksTextView = ""
@@ -43,8 +44,13 @@ class UnlockedContentVC: UIViewController {
         isiContentTableView.register(UINib(nibName: "KeyInspirationAndButton", bundle: nil), forCellReuseIdentifier: "keyInspirationAndButtonCellID")
         isiContentTableView.register(UINib(nibName: "PertanyaanCell", bundle: nil), forCellReuseIdentifier: "pertanyaanCellID")
         
-        
         retrieveData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        dataKonten.reverse()
     }
     
 
@@ -68,8 +74,9 @@ class UnlockedContentVC: UIViewController {
         request.returnsObjectsAsFaults = false
         do {
             dataKonten = try managedContext.fetch(request)
-            print(" data konten bro \(dataKonten[dataKonten.count-1])")
-            if dataKonten[dataKonten.count-1].alurCeritaTextView == nil {
+            dataKonten.reverse()
+            print(" data konten bro \(dataKonten[index])")
+            if dataKonten[index].alurCeritaTextView == nil {
                 nillChecker = true
             } else {
                 nillChecker = false

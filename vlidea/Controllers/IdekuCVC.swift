@@ -23,6 +23,7 @@ class IdekuCVC: UIViewController {
     var dataKonten: [NSManagedObject] = []
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var refreshControl = UIRefreshControl()
+    var index = 0
     
     // time related variables
     var currentTime = Date()
@@ -152,6 +153,7 @@ class IdekuCVC: UIViewController {
             nextVC.unique = unique
             nextVC.booming = booming
             nextVC.savedThumbnail = savedThumbnail
+            nextVC.index = index
         } else if segue.identifier == "goToBikinIdeVC" {
             let nextVC = segue.destination as! UINavigationController
             let next2VC = nextVC.topViewController as! BikinIdeVC
@@ -231,6 +233,7 @@ extension IdekuCVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
                 let fetchedData = dataKonten[indexPath.row]
                 let theURL = fetchedData.value(forKey: "savedVideo") as? String
                 savedThumbnail = videoPreviewUIImage(moviePath: theURL!)!
+                index = indexPath.row
                 performSegue(withIdentifier: "unlockedContentSegue", sender: self)
             } else {
                 judul = dataKonten[indexPath.row].value(forKey: "judul") as! String
