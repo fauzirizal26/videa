@@ -23,16 +23,14 @@ class UnlockedContentVC: UIViewController {
     var settings = ""
     var unique = ""
     var booming = ""
-    var savedVideoURL = ""
     var savedThumbnail: UIImage = UIImage()
-    var doneStroryboard = false
     var nillChecker = true
     var dataKonten: [Konten] = [Konten]()
     var index = 0
     
-    var alurCeritaTextView = ""
-    var klimaksTextView = ""
-    var pembukaanDanPenutupanTextView = ""
+    var alurCeritaTextView:UITextView!
+    var klimaksTextView:UITextView!
+    var pembukaanDanPenutupanTextView:UITextView!
     
 
     override func viewDidLoad() {
@@ -50,20 +48,23 @@ class UnlockedContentVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        dataKonten.reverse()
+        navigationController?.navigationItem.largeTitleDisplayMode = .never
+        isiContentTableView.reloadData()
+
     }
     
 
     // play button
     @objc func playButtonPressed() {
-        let video = AVPlayer(url: URL(fileURLWithPath: savedVideoURL))
-        let videoPlayer = AVPlayerViewController()
-        videoPlayer.player = video
-
-        present(videoPlayer, animated: true) {
-            print(self.savedVideoURL)
-            video.play()
+        let output = URL(fileURLWithPath: dataKonten[index].savedVideo!)
+        let video = AVPlayer(url: output)
+        
+        let controller = AVPlayerViewController()
+        controller.player = video
+        present(controller, animated: true) {
+            controller.player?.play()
         }
+        print(dataKonten[index].savedVideo!)
     }
     
     // MARK: - Core Data
@@ -91,10 +92,9 @@ class UnlockedContentVC: UIViewController {
         let request: NSFetchRequest = Konten.fetchRequest()
         request.returnsObjectsAsFaults = false
         do {
-            
-            dataKonten[dataKonten.count-1].setValue(alurCeritaTextView, forKey: "alurCeritaTextView")
-            dataKonten[dataKonten.count-1].setValue(pembukaanDanPenutupanTextView, forKey: "pembukaanDanPenutupanTextView")
-            dataKonten[dataKonten.count-1].setValue(klimaksTextView, forKey: "klimaksTextView")
+            dataKonten[index].setValue(alurCeritaTextView.text!, forKey: "alurCeritaTextView")
+        dataKonten[index].setValue(pembukaanDanPenutupanTextView.text!, forKey: "pembukaanDanPenutupanTextView")
+            dataKonten[index].setValue(klimaksTextView.text!, forKey: "klimaksTextView")
             do {
                 try managedContext.save()
                 self.navigationController?.popToRootViewController(animated: true)
@@ -116,7 +116,8 @@ extension UnlockedContentVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        
+        return nillChecker ? 2 : 3
     }
 
     
@@ -130,16 +131,18 @@ extension UnlockedContentVC: UITableViewDelegate, UITableViewDataSource {
                 cell.settingsLabel.text = settings
                 cell.uniqueLabel.text = unique
                 cell.boomingFactorLabel.text = booming
-                isiContentTableView.rowHeight = 414
+                
+                isiContentTableView.rowHeight = 450
                 return cell
                 
             } else {
                 let cell = isiContentTableView.dequeueReusableCell(withIdentifier: "pertanyaanCellID", for: indexPath) as! PertanyaanCell
-                isiContentTableView.rowHeight = 1100
-                klimaksTextView = cell.klimaksTextView.text
-                alurCeritaTextView = cell.alurCeritaTextView.text
-                pembukaanDanPenutupanTextView = cell.pembukaanDanPenutupanTextView.text
+                //isiContentTableView.rowHeight = 1100
+                klimaksTextView = cell.klimaksTextView
+                alurCeritaTextView = cell.alurCeritaTextView
+                pembukaanDanPenutupanTextView = cell.pembukaanDanPenutupanTextView
                 cell.selesaiButton.addTarget(self, action: #selector(tambahTextViewKeCoreData), for: .touchUpInside)
+                isiContentTableView.rowHeight = 1100
                 return cell
             }
         } else {
@@ -153,8 +156,11 @@ extension UnlockedContentVC: UITableViewDelegate, UITableViewDataSource {
                 return cell
             } else if indexPath.row == 1 {
                 let cell = isiContentTableView.dequeueReusableCell(withIdentifier: "storylineCellID", for: indexPath) as! StorylineCell
-                isiContentTableView.rowHeight = 1000
-                 
+                //isiContentTableView.rowHeight = 1000
+                cell.pembukaanDanPenutupanLabel.text = dataKonten[index].pembukaanDanPenutupanTextView
+                cell.klimaksLabel.text = dataKonten[index].klimaksTextView
+                cell.alurCeritaLabel.text = dataKonten[index].alurCeritaTextView
+                 isiContentTableView.rowHeight = 800
                 return cell
             } else  {
                 let cell = isiContentTableView.dequeueReusableCell(withIdentifier: "keyInspirationAndButtonCellID", for: indexPath) as! KeyInspirationAndButton
@@ -164,7 +170,7 @@ extension UnlockedContentVC: UITableViewDelegate, UITableViewDataSource {
                 cell.settingsLabel.text = settings
                 cell.uniqueLabel.text = unique
                 cell.boomingFactorLabel.text = booming
-                isiContentTableView.rowHeight = 414
+                isiContentTableView.rowHeight = 450
                 
                 return cell
             }

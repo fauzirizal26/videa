@@ -115,6 +115,7 @@
                     <constraint firstAttribute="trailing" secondItem="4Ry-Q6-7bd" secondAttribute="trailing" constant="11" id="cnm-hV-hQY"/>
                     <constraint firstAttribute="trailing" secondItem="nsO-q1-q54" secondAttribute="trailing" constant="15" id="gnh-Iy-fCx"/>
                     <constraint firstAttribute="bottom" secondItem="qxg-yV-Njb" secondAttribute="bottom" constant="40" id="igD-Mr-gZc"/>
+                    <constraint firstItem="qxg-yV-Njb" firstAttribute="top" secondItem="4Ry-Q6-7bd" secondAttribute="bottom" constant="53.5" id="lCQ-4c-Tfy"/>
                     <constraint firstItem="4Ry-Q6-7bd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="11" id="pou-Gj-VMg"/>
                     <constraint firstItem="4Ry-Q6-7bd" firstAttribute="top" secondItem="nsO-q1-q54" secondAttribute="bottom" constant="25" id="sbl-NP-uJ1"/>
                     <constraint firstItem="nsO-q1-q54" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="z7P-Vw-bIb"/>

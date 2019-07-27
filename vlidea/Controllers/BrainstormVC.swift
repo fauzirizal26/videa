@@ -29,7 +29,6 @@ class BrainstormVC: UIViewController {
     @IBOutlet weak var textTwoPopped: UILabel!
     @IBOutlet weak var inspirasiLainOutlet: UIButton!
     
-    var isFromCameraVC = false
     
     
     // variables

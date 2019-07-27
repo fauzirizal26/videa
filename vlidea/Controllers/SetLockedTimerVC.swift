@@ -98,7 +98,7 @@ class SetLockedTimerVC: UIViewController{
         simpanData.boomingFactor = booming
         simpanData.savedVideo = savedVideoURL
         if currentPickedDay == 0 {
-            simpanData.pickedDateToLockContent = Calendar.current.date(byAdding: .second, value: 5, to: date)
+            simpanData.pickedDateToLockContent = Calendar.current.date(byAdding: .second, value: 10, to: date)
         } else {
             simpanData.pickedDateToLockContent = Calendar.current.date(byAdding: .day, value: currentPickedDay, to: date)
         }

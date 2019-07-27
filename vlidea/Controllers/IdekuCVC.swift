@@ -10,14 +10,13 @@ import UIKit
 import CoreData
 import AVFoundation
 
-private let reuseIdentifier = "Cell"
-
-
 
 class IdekuCVC: UIViewController {
     
     // outlets
-    @IBOutlet weak var collectionContent: UICollectionView!
+    //@IBOutlet weak var collectionContent: UICollectionView!
+    @IBOutlet weak var tableContent: UITableView!
+    
     
     // variables
     var dataKonten: [NSManagedObject] = []
@@ -77,13 +76,13 @@ class IdekuCVC: UIViewController {
         super.viewDidLoad()
 
         // Register cell classes
-        collectionContent.register(UINib(nibName: "ContentCollectionCell", bundle: nil), forCellWithReuseIdentifier: "contentCellID")
-        
+        tableContent.register(UINib(nibName: "HeaderAndThumbnailCell", bundle: nil), forCellReuseIdentifier: "HeaderAndThumbnailCellID")
         
         
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl.addTarget(self, action: #selector(refresh), for: UIControl.Event.valueChanged)
-        collectionContent.addSubview(refreshControl)
+        //collectionContent.addSubview(refreshControl)
+        tableContent.addSubview(refreshControl)
         
         print(currentTime)
         
@@ -92,7 +91,7 @@ class IdekuCVC: UIViewController {
     // MArk: - Refresh
     @objc func refresh(sender:AnyObject) {
         // Code to refresh table view
-        collectionContent.reloadData()
+        tableContent.reloadData()
         refreshControl.endRefreshing()
         currentTime = Date()
         print(currentTime)
@@ -154,26 +153,14 @@ class IdekuCVC: UIViewController {
             nextVC.booming = booming
             nextVC.savedThumbnail = savedThumbnail
             nextVC.index = index
-        } else if segue.identifier == "goToBikinIdeVC" {
-            let nextVC = segue.destination as! UINavigationController
-            let next2VC = nextVC.topViewController as! BikinIdeVC
-            
         }
     }
 
 }
 
-extension IdekuCVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    // MARK: UICollectionViewDataSource
+extension IdekuCVC: UITableViewDelegate, UITableViewDataSource {
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-    
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if dataKonten.count < 1 {
             return 1
         } else {
@@ -181,14 +168,16 @@ extension IdekuCVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "contentCellID", for: indexPath) as! ContentCollectionCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableContent.dequeueReusableCell(withIdentifier: "HeaderAndThumbnailCellID", for: indexPath) as! HeaderAndThumbnailCell
         
         if indexPath.row == dataKonten.count {
             
             cell.lockedUnlockedLabel.text = "Terbuka"
-            cell.titleLabel.text = "My First Vlog"
+            cell.titleLabel.text = "Tutorial Vide"
             cell.thumbnailPicture.image = #imageLiteral(resourceName: "testerThumbnail")
+            cell.playButtonLabel.isHidden = true
+            cell.thumbnailPicture.contentMode = UIView.ContentMode.scaleAspectFit
             
             return cell
         } else {
@@ -198,7 +187,9 @@ extension IdekuCVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
                 let fetchedData = dataKonten[indexPath.row]
                 let theURL = fetchedData.value(forKey: "savedVideo") as? String
                 cell.thumbnailPicture.image = videoPreviewUIImage(moviePath: theURL!)
-
+                cell.thumbnailPicture.contentMode = UIView.ContentMode.scaleAspectFit
+                cell.playButtonLabel.isHidden = true
+                
                 return cell
             } else {
                 cell.lockedUnlockedLabel.text = "Tertutup"
@@ -206,16 +197,14 @@ extension IdekuCVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
                 let fetchedData = dataKonten[indexPath.row]
                 let theURL = fetchedData.value(forKey: "savedVideo") as? String
                 cell.thumbnailPicture.image = videoPreviewUIImage(moviePath: theURL!)
+                cell.thumbnailPicture.contentMode = UIView.ContentMode.scaleAspectFit
+                cell.playButtonLabel.isHidden = true
                 return cell
             }
         }
-        
     }
     
-    // MARK: UICollectionViewDelegate
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == dataKonten.count {
             performSegue(withIdentifier: "goToTutorialSegue", sender: self)
         } else {
@@ -247,48 +236,22 @@ extension IdekuCVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
                 let fetchedData = dataKonten[indexPath.row]
                 let theURL = fetchedData.value(forKey: "savedVideo") as? String
                 savedThumbnail = videoPreviewUIImage(moviePath: theURL!)!
-
+                
                 
                 performSegue(withIdentifier: "lockedContentSegue", sender: self)
             }
         }
-
     }
     
-    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete {
+            dataKonten.remove(at: indexPath.row)
+            tableContent.deleteRows(at: [indexPath], with: .fade)
+        }
     }
-    /*
-     // Uncomment this method to specify if the specified item should be highlighted during tracking
-     override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-     return true
-     }
-     */
     
-    /*
-     // Uncomment this method to specify if the specified item should be selected
-     override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-     return true
-     }
-     */
-    
-    /*
-     // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-     override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-     return false
-     }
-     
-     override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-     return false
-     }
-     
-     override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-     
-     }
-     */
-    
-    // MARK: - cell design
-//    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        
-//        return CGSize(width: 375, height: 455)
-//    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 514
+    }
+}

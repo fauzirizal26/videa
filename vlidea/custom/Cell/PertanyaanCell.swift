@@ -8,11 +8,7 @@
 
 import UIKit
 
-protocol PertanyaanCellDelegate: class {
-    func textViewFilled(withValue: String, withTextViewName: String)
-}
-
-class PertanyaanCell: UITableViewCell, UITextViewDelegate {
+class PertanyaanCell: UITableViewCell {
     
     // outlets
     @IBOutlet weak var pembukaanDanPenutupanTextView: UITextView!
@@ -20,16 +16,9 @@ class PertanyaanCell: UITableViewCell, UITextViewDelegate {
     @IBOutlet weak var alurCeritaTextView: UITextView!
     @IBOutlet weak var selesaiButton: UIButton!
     
-    
-    // variables    
-    weak var delegate: PertanyaanCellDelegate?
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        pembukaanDanPenutupanTextView.textColor = UIColor.lightGray
-        klimaksTextView.textColor = UIColor.lightGray
-        alurCeritaTextView.textColor = UIColor.lightGray
         
     }
     
@@ -41,28 +30,6 @@ class PertanyaanCell: UITableViewCell, UITextViewDelegate {
         // Configure the view for the selected state
     }
     
-    
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.textColor == UIColor.lightGray {
-            textView.text = nil
-            textView.textColor = UIColor.black
-        }
-    }
-    
-    func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
-        return true
-    }
-    
-    func textViewDidEndEditing(_ textView: UITextView) {
-        if textView == pembukaanDanPenutupanTextView {
-            self.delegate?.textViewFilled(withValue: textView.text!, withTextViewName: "pembukaan")
-        } else if textView == klimaksTextView {
-            self.delegate?.textViewFilled(withValue: textView.text!, withTextViewName: "klimaks")
-        } else {
-            self.delegate?.textViewFilled(withValue: textView.text!, withTextViewName: "alur")
-        }
-        
-    }
     
     
 }

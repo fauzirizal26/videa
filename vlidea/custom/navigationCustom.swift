@@ -26,8 +26,12 @@ extension UIViewController {
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 30, height: 20))
         imageView.image = logo
         imageView.contentMode = .scaleAspectFit
+        
+        
         self.navigationItem.titleView = imageView
         self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationItem.leftBarButtonItem = editButtonItem
+        self.navigationItem.leftBarButtonItem?.tintColor = UIColor.white
     }
     
     func closeButtonKanan() {

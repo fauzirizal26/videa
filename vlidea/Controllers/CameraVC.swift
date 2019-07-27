@@ -173,9 +173,7 @@ class CameraVC: UIViewController, AVCaptureFileOutputRecordingDelegate {
             })
             
             let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-            let outputFileURL = paths[0].appendingPathComponent("output\(judulLabel.text)\(onePhraseLabel.text).mov")
-//            let outputPath = NSTemporaryDirectory() + "output\(judulLabel.text)\(onePhraseLabel.text).mov"
-//            let outputFileURL = URL(fileURLWithPath: outputPath)
+            let outputFileURL = paths[0].appendingPathComponent("output\(judulLabel.text!)\(onePhraseLabel.text!).mp4")
             videoFileOutput?.startRecording(to: outputFileURL, recordingDelegate: self)
             
             

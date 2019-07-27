@@ -20,11 +20,14 @@
 		D062BCEE22D36F6500A3F376 /* LabelDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = D062BCED22D36F6500A3F376 /* LabelDesign.swift */; };
 		D062BCF022D48B6200A3F376 /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D062BCEF22D48B6200A3F376 /* CameraVC.swift */; };
 		D062BCF222D48DDA00A3F376 /* IdekuCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D062BCF122D48DDA00A3F376 /* IdekuCVC.swift */; };
+		D0794EF622EAC64600D4081E /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0794EF422EAC64600D4081E /* Tutorial.storyboard */; };
+		D0794EF822EAC6F800D4081E /* BikinIde.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0794EF722EAC6F800D4081E /* BikinIde.storyboard */; };
 		D09797B422E0752000C639E5 /* TutorialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09797B322E0752000C639E5 /* TutorialVC.swift */; };
 		D09797B622E0B1C100C639E5 /* PanduanLanjutanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09797B522E0B1C100C639E5 /* PanduanLanjutanVC.swift */; };
 		D09797B822E0B31A00C639E5 /* TipsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09797B722E0B31A00C639E5 /* TipsVC.swift */; };
 		D0B0482E22E174B500C2BA93 /* PertanyaanCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B0482C22E174B500C2BA93 /* PertanyaanCell.swift */; };
 		D0B0482F22E174B500C2BA93 /* PertanyaanCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0B0482D22E174B500C2BA93 /* PertanyaanCell.xib */; };
+		D0B0483122E330EE00C2BA93 /* TextViewCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B0483022E330EE00C2BA93 /* TextViewCustom.swift */; };
 		D0CEA62722D738680058FB3E /* LockedContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CEA62622D738680058FB3E /* LockedContentVC.swift */; };
 		D0CEA62922D8789E0058FB3E /* FinishedTakingVideoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CEA62822D8789E0058FB3E /* FinishedTakingVideoVC.swift */; };
 		D0EA2BD822D9D079005AA427 /* DataInspirasiClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EA2BD722D9D079005AA427 /* DataInspirasiClass.swift */; };
@@ -57,11 +60,14 @@
 		D062BCED22D36F6500A3F376 /* LabelDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelDesign.swift; sourceTree = "<group>"; };
 		D062BCEF22D48B6200A3F376 /* CameraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraVC.swift; sourceTree = "<group>"; };
 		D062BCF122D48DDA00A3F376 /* IdekuCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdekuCVC.swift; sourceTree = "<group>"; };
+		D0794EF522EAC64600D4081E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = vlidea/View/Base.lproj/Tutorial.storyboard; sourceTree = "<group>"; };
+		D0794EF722EAC6F800D4081E /* BikinIde.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BikinIde.storyboard; sourceTree = "<group>"; };
 		D09797B322E0752000C639E5 /* TutorialVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialVC.swift; sourceTree = "<group>"; };
 		D09797B522E0B1C100C639E5 /* PanduanLanjutanVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanduanLanjutanVC.swift; sourceTree = "<group>"; };
 		D09797B722E0B31A00C639E5 /* TipsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsVC.swift; sourceTree = "<group>"; };
 		D0B0482C22E174B500C2BA93 /* PertanyaanCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PertanyaanCell.swift; sourceTree = "<group>"; };
 		D0B0482D22E174B500C2BA93 /* PertanyaanCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PertanyaanCell.xib; sourceTree = "<group>"; };
+		D0B0483022E330EE00C2BA93 /* TextViewCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewCustom.swift; sourceTree = "<group>"; };
 		D0CEA62622D738680058FB3E /* LockedContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockedContentVC.swift; sourceTree = "<group>"; };
 		D0CEA62822D8789E0058FB3E /* FinishedTakingVideoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedTakingVideoVC.swift; sourceTree = "<group>"; };
 		D0EA2BD722D9D079005AA427 /* DataInspirasiClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataInspirasiClass.swift; sourceTree = "<group>"; };
@@ -140,6 +146,8 @@
 			isa = PBXGroup;
 			children = (
 				D062BCCB22D328C400A3F376 /* Main.storyboard */,
+				D0794EF422EAC64600D4081E /* Tutorial.storyboard */,
+				D0794EF722EAC6F800D4081E /* BikinIde.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -172,6 +180,7 @@
 				D062BCE722D338B300A3F376 /* TextFieldStyle.swift */,
 				D062BCED22D36F6500A3F376 /* LabelDesign.swift */,
 				D0EA2BD922D9E736005AA427 /* navigationCustom.swift */,
+				D0B0483022E330EE00C2BA93 /* TextViewCustom.swift */,
 			);
 			path = custom;
 			sourceTree = "<group>";
@@ -252,6 +261,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0EA2BEB22DB5ACC005AA427 /* KeyInspirationAndButton.xib in Resources */,
+				D0794EF822EAC6F800D4081E /* BikinIde.storyboard in Resources */,
+				D0794EF622EAC64600D4081E /* Tutorial.storyboard in Resources */,
 				D0EA2BF122DC78FB005AA427 /* ContentCollectionCell.xib in Resources */,
 				D062BCD522D328C600A3F376 /* LaunchScreen.storyboard in Resources */,
 				D0EA2BE722DB576E005AA427 /* StorylineCell.xib in Resources */,
@@ -283,6 +294,7 @@
 				D09797B622E0B1C100C639E5 /* PanduanLanjutanVC.swift in Sources */,
 				D09797B422E0752000C639E5 /* TutorialVC.swift in Sources */,
 				D0EA2BD822D9D079005AA427 /* DataInspirasiClass.swift in Sources */,
+				D0B0483122E330EE00C2BA93 /* TextViewCustom.swift in Sources */,
 				D0B0482E22E174B500C2BA93 /* PertanyaanCell.swift in Sources */,
 				D062BCE322D3340500A3F376 /* BikinIdeVC.swift in Sources */,
 				D062BCD022D328C400A3F376 /* vlidea.xcdatamodeld in Sources */,
@@ -313,6 +325,14 @@
 				D062BCD422D328C600A3F376 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		D0794EF422EAC64600D4081E /* Tutorial.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D0794EF522EAC64600D4081E /* Base */,
+			);
+			name = Tutorial.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

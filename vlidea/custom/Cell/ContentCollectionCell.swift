@@ -20,5 +20,20 @@ class ContentCollectionCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    var isInEditingMode: Bool = false {
+        didSet {
+            //checkmarkLabel.isHidden = !isInEditingMode
+        }
+    }
+    
+    // 2
+    override var isSelected: Bool {
+        didSet {
+            if isInEditingMode {
+                //checkmarkLabel.text = isSelected ? "✓" : ""
+            }
+        }
+    }
 
 }
